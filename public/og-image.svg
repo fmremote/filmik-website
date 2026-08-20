@@ -1,0 +1,31 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#07070d"/>
+  <rect x="64" y="64" width="1072" height="502" rx="36" fill="url(#panel)" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="1020" cy="162" r="180" fill="url(#glow)" fill-opacity="0.95"/>
+  <circle cx="208" cy="488" r="148" fill="url(#glow2)" fill-opacity="0.6"/>
+  <rect x="112" y="118" width="182" height="182" rx="40" fill="url(#logo)"/>
+  <path d="M184.778 177H225.223V195.338H210.946V251H198.946V195.338H184.778V177Z" fill="white"/>
+  <path d="M150 177H180.147L200.771 210.393V251H188.771V214.055L168.5 181.151H150V177Z" fill="white" fill-opacity="0.88"/>
+  <text x="112" y="372" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.68">Film &amp; TV Production Management Platform</text>
+  <text x="112" y="440" fill="white" font-family="Outfit, Inter, Arial, sans-serif" font-size="72" font-weight="800">Filmik</text>
+  <text x="112" y="506" fill="white" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" opacity="0.8">Run submissions, calendars, scene cards, and approvals in one workspace.</text>
+  <text x="112" y="548" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600">Start your 7-day free trial without a sales queue.</text>
+  <defs>
+    <linearGradient id="panel" x1="112" y1="92" x2="1041" y2="566" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="112" y1="118" x2="294" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1020 162) rotate(90) scale(180)">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(208 488) rotate(90) scale(148)">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#0EA5E9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

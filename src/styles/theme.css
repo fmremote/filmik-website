@@ -1,0 +1,220 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  /* Filmik palette */
+  --background: #0d1621;
+  --foreground: #ffffff;
+  --card: #111827;
+  --card-foreground: #f9fafb;
+  --popover: #111827;
+  --popover-foreground: #f9fafb;
+  --primary: #3c82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #8f79f1;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #8ca2c2;
+  --accent: #8570e4;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(140, 162, 194, 0.22);
+  --input: rgba(140, 162, 194, 0.2);
+  --input-background: #374151;
+  --switch-background: #4b5563;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #3c82f6;
+  --chart-1: #3c82f6;
+  --chart-2: #8f79f1;
+  --chart-3: #576c89;
+  --chart-4: #8ca2c2;
+  --chart-5: #d1d5db;
+  --radius: 0.75rem;
+  --sidebar: #111827;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #3c82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(140, 162, 194, 0.2);
+  --sidebar-ring: #8f79f1;
+}
+
+.dark {
+  --background: #0d1621;
+  --foreground: #ffffff;
+  --card: #111827;
+  --card-foreground: #f9fafb;
+  --popover: #111827;
+  --popover-foreground: #f9fafb;
+  --primary: #3c82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #8f79f1;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #8ca2c2;
+  --accent: #8570e4;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(140, 162, 194, 0.22);
+  --input: rgba(140, 162, 194, 0.2);
+  --input-background: #374151;
+  --switch-background: #4b5563;
+  --ring: #3c82f6;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #3c82f6;
+  --chart-2: #8f79f1;
+  --chart-3: #576c89;
+  --chart-4: #8ca2c2;
+  --chart-5: #d1d5db;
+  --sidebar: #111827;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #3c82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(140, 162, 194, 0.2);
+  --sidebar-ring: #8f79f1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Hide scrollbar while keeping scroll functional */
+  ::-webkit-scrollbar { width: 6px; background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  .safari-stable {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    contain: paint;
+  }
+
+  .safari-blur-fix {
+    isolation: isolate;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}

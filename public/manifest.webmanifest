@@ -1,0 +1,17 @@
+{
+  "name": "Filmik",
+  "short_name": "Filmik",
+  "description": "Filmik is the operating system for film and television production, helping coordinators, producers, and performers manage submissions, calendars, scene cards, documents, and trial signups in one workspace.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07070d",
+  "theme_color": "#07070d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

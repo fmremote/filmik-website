@@ -1,0 +1,19 @@
+# Filmik
+
+> Filmik is the operating system for film and television production.
+
+Filmik helps coordinators, producers, and performers manage submissions, calendars, scene cards, documents, and trial signups in one workspace.
+
+## Canonical site
+- https://filmik-website.vercel.app
+
+## Primary audience
+- Coordinators managing submissions and scene cards
+- Producers running projects, calendars, and approvals
+- Performers sharing profiles, reels, and submission kits
+
+## Key pages
+- https://filmik-website.vercel.app/
+
+## Contact
+- hello@filmik.com
