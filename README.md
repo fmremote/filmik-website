@@ -125,6 +125,41 @@ That does not prevent working from this computer later. The normal flow becomes:
 3. Preview locally when needed
 4. Deploy to Vercel
 
+## Recommended No-Cost Remote Option
+
+The recommended no-cost path for this project is GitHub Codespaces.
+
+Why this is the best fit here:
+
+- The repo already lives on GitHub
+- It works well with Vite/React projects like this one
+- It lets you edit and run the site in a browser without using this computer
+- The repo now includes a dev container config at [.devcontainer/devcontainer.json](/Users/victorfrias/dev/filmik-website/.devcontainer/devcontainer.json)
+
+As of August 20, 2026, GitHub documents that personal accounts include:
+
+- 120 free Codespaces compute hours per month
+- 15 GB-month of free Codespaces storage per month
+
+That makes it the cleanest free option for occasional remote updates on this marketing site.
+
+### How To Use Codespaces
+
+1. Open the repo on GitHub
+2. Click `Code`
+3. Open the `Codespaces` tab
+4. Create a new codespace from `main`
+5. Wait for setup to finish
+6. Run `npm run dev`
+7. Open the forwarded port for the site preview
+
+### Notes
+
+- If you stay within GitHub's included free quota, there is no added cost
+- If you exceed the included free quota, GitHub may require billing before additional usage continues
+- For this repo, shut down idle codespaces when you're done to preserve the free allowance
+- Local work on this computer is unaffected
+
 ## Repository Hygiene
 
 - Do not commit `dist`, `node_modules`, `.env`, or `.vercel`
