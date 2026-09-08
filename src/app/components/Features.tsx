@@ -13,23 +13,14 @@ import {
   LayoutGrid,
   Sparkles,
 } from "lucide-react";
+import { siteContent } from "../../content/siteContent";
 
-const features = [
-  { icon: FolderOpen, title: "Projects", description: "Organize productions with comprehensive project management and real-time team visibility.", color: "from-blue-500/15 to-blue-500/5", iconColor: "text-blue-400" },
-  { icon: FileText, title: "Script Breakdown", description: "Detailed scene-by-scene analysis, categorization, and automated element extraction.", color: "from-violet-500/15 to-violet-500/5", iconColor: "text-violet-400" },
-  { icon: Calendar, title: "Calendars", description: "Production schedules and timeline coordination across your entire team.", color: "from-emerald-500/15 to-emerald-500/5", iconColor: "text-emerald-400" },
-  { icon: Clapperboard, title: "Scene Cards", description: "Visual scene management with location, talent, and equipment at a glance.", color: "from-amber-500/15 to-amber-500/5", iconColor: "text-amber-400" },
-  { icon: FileStack, title: "General Documents", description: "Centralized document management, version control, and secure sharing.", color: "from-rose-500/15 to-rose-500/5", iconColor: "text-rose-400" },
-  { icon: Image, title: "Media", description: "Asset management for all production media, organized by scene and department.", color: "from-sky-500/15 to-sky-500/5", iconColor: "text-sky-400" },
-  { icon: Mail, title: "Memos", description: "Internal production communication with read receipts and threaded replies.", color: "from-indigo-500/15 to-indigo-500/5", iconColor: "text-indigo-400" },
-  { icon: Bell, title: "Notifications", description: "Stay updated on every production change with intelligent alerts.", color: "from-orange-500/15 to-orange-500/5", iconColor: "text-orange-400" },
-  { icon: Users, title: "Member Directory", description: "Searchable crew and talent directory with roles, availability, and contact info.", color: "from-teal-500/15 to-teal-500/5", iconColor: "text-teal-400" },
-  { icon: UserCircle, title: "Public Profiles", description: "Professional performer profiles and portfolios discoverable by coordinators.", color: "from-pink-500/15 to-pink-500/5", iconColor: "text-pink-400" },
-  { icon: LayoutGrid, title: "Submission Boards", description: "Talent submission management, side-by-side review, and collaborative decisions.", color: "from-cyan-500/15 to-cyan-500/5", iconColor: "text-cyan-400" },
-  { icon: Sparkles, title: "AI", description: "AI-powered script breakdown — what took days now takes minutes.", color: "from-fuchsia-500/15 to-fuchsia-500/5", iconColor: "text-fuchsia-400" },
-];
+const featureStyles = [
+  [FolderOpen, "from-blue-500/15 to-blue-500/5", "text-blue-400"], [FileText, "from-violet-500/15 to-violet-500/5", "text-violet-400"], [Calendar, "from-emerald-500/15 to-emerald-500/5", "text-emerald-400"], [Clapperboard, "from-amber-500/15 to-amber-500/5", "text-amber-400"], [FileStack, "from-rose-500/15 to-rose-500/5", "text-rose-400"], [Image, "from-sky-500/15 to-sky-500/5", "text-sky-400"], [Mail, "from-indigo-500/15 to-indigo-500/5", "text-indigo-400"], [Bell, "from-orange-500/15 to-orange-500/5", "text-orange-400"], [Users, "from-teal-500/15 to-teal-500/5", "text-teal-400"], [UserCircle, "from-pink-500/15 to-pink-500/5", "text-pink-400"], [LayoutGrid, "from-cyan-500/15 to-cyan-500/5", "text-cyan-400"], [Sparkles, "from-fuchsia-500/15 to-fuchsia-500/5", "text-fuchsia-400"],
+] as const;
 
 export function Features() {
+  const features = siteContent.platformFeatures.cards.map(([title, description], index) => ({ title, description, icon: featureStyles[index][0], color: featureStyles[index][1], iconColor: featureStyles[index][2] }));
   return (
     <section id="features" className="py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-[#07070d]" />
@@ -43,15 +34,15 @@ export function Features() {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] text-white/40 text-xs font-semibold tracking-wider uppercase mb-6">
-            Platform Features
+            {siteContent.platformFeatures.eyebrow}
           </div>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight leading-tight"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Everything You Need.
+            {siteContent.platformFeatures.heading[0]}
             <br />
-            <span className="text-white/40">Nothing You Don&apos;t.</span>
+            <span className="text-white/40">{siteContent.platformFeatures.heading[1]}</span>
           </h2>
         </motion.div>
 

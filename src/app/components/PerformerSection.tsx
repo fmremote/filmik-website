@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import {
   User,
@@ -11,6 +12,8 @@ import {
   Link2,
   CheckCircle2,
 } from "lucide-react";
+import { siteContent } from "../../content/siteContent";
+import { BrowserFrame } from "./BrowserFrame";
 
 const features = [
   { icon: User, label: "Bio & Skills", color: "text-blue-400", bg: "bg-blue-500/10" },
@@ -25,8 +28,10 @@ const features = [
 ];
 
 export function PerformerSection() {
+  const { performers } = siteContent;
+  const [profileCopied, setProfileCopied] = useState(false);
   return (
-    <section className="py-20 sm:py-32 relative overflow-hidden">
+    <section id="performers" className="py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-[#07070d]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,rgba(139,92,246,0.06),transparent)]" />
 
@@ -42,6 +47,10 @@ export function PerformerSection() {
           >
             <div className="relative max-w-sm mx-auto lg:max-w-none">
               <div className="absolute -inset-4 bg-violet-500/10 blur-3xl rounded-3xl opacity-60" />
+              <a href={performers.profile.url} target="_blank" rel="noreferrer" data-analytics-event="profile_link_open" data-analytics-label="Filmik public profile" data-analytics-location="performer_profile" className="relative block transition-transform hover:scale-[1.01]">
+                <BrowserFrame src="/images/performer-profile.webp" alt="Filmik performer profile" status="Profile ready" />
+              </a>
+              <div className="hidden">
               <div className="relative rounded-2xl border border-white/[0.08] overflow-hidden shadow-2xl bg-[#0f0f1c]">
                 {/* Cover */}
                 <div className="relative h-32 sm:h-44 overflow-hidden">
@@ -72,11 +81,7 @@ export function PerformerSection() {
 
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6 p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                    {[
-                      { label: "Credits", val: "24" },
-                      { label: "Self-Tapes", val: "8" },
-                      { label: "Views", val: "1.2k" },
-                    ].map((s) => (
+                    {performers.profile.stats.map(([label, val]) => ({ label, val })).map((s) => (
                       <div key={s.label} className="text-center">
                         <div className="text-base sm:text-lg font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
                           {s.val}
@@ -105,10 +110,23 @@ export function PerformerSection() {
                   {/* Share link */}
                   <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                     <Link2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
-                    <span className="text-[10px] sm:text-xs text-white/35 font-mono truncate">filmik.io/profile/alex-morgan</span>
-                    <div className="ml-auto text-[10px] sm:text-xs text-primary font-semibold cursor-pointer hover:text-primary/80 flex-shrink-0">Copy</div>
+                    <a href={performers.profile.url} target="_blank" rel="noreferrer" data-analytics-event="profile_link_open" data-analytics-label="Filmik public profile" data-analytics-location="performer_profile" className="truncate font-mono text-[10px] text-primary/80 transition hover:text-primary hover:underline sm:text-xs">{performers.profile.url}</a>
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        await navigator.clipboard?.writeText(performers.profile.url);
+                        setProfileCopied(true);
+                      }}
+                      data-analytics-event="profile_link_copy"
+                      data-analytics-label="Filmik profile URL"
+                      data-analytics-location="performer_profile"
+                      className="ml-auto flex-shrink-0 text-[10px] font-semibold text-primary hover:text-primary/80 sm:text-xs"
+                    >
+                      {profileCopied ? "Copied" : performers.profile.copyCta}
+                    </button>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </motion.div>
@@ -122,19 +140,18 @@ export function PerformerSection() {
             transition={{ duration: 0.7 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-semibold tracking-wider uppercase mb-5 sm:mb-6">
-              For Performers
+              {performers.eyebrow}
             </div>
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 leading-tight tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              A Profile Built
+              {performers.heading[0]}
               <br />
-              for Getting Hired
+              {performers.heading[1]}
             </h2>
             <p className="text-sm sm:text-base text-white/50 mb-8 sm:mb-10 leading-relaxed">
-              Everything coordinators need to see — in one beautiful, shareable profile.
-              Stop emailing PDFs. Start sharing your Filmik link.
+              {performers.description}
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mb-8 sm:mb-10">
@@ -161,10 +178,10 @@ export function PerformerSection() {
             <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-violet-500/10 to-blue-500/10 border border-violet-500/20">
               <div className="space-y-1">
                 <p className="text-xl sm:text-2xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
-                  One profile. One link.
+                  {performers.closing[0]}
                 </p>
                 <p className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent" style={{ fontFamily: "var(--font-display)" }}>
-                  Ready for coordinators.
+                  {performers.closing[1]}
                 </p>
               </div>
             </div>

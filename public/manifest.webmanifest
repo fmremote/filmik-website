@@ -1,14 +1,14 @@
 {
   "name": "Filmik",
   "short_name": "Filmik",
-  "description": "Filmik is the operating system for film and television production, helping coordinators, producers, and performers manage submissions, calendars, scene cards, documents, and trial signups in one workspace.",
+  "description": "Filmik helps stunt departments organize their teams, scene information, documents, and permissions while coordinating with film and television production.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#07070d",
   "theme_color": "#07070d",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/favicon.svg?v=brandmark-20260903d",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

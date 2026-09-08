@@ -1,0 +1,505 @@
+FILMIK WEBSITE COPY
+===================
+
+Use this document to review and revise the words on the Filmik website.
+The sections are ordered as they appear on the page.
+
+
+NAVIGATION
+----------
+Links
+- Solutions
+- Workflow
+- Pricing
+
+Buttons
+- See Workflow
+- Request Access
+- Explore Workflow
+- See Plans
+
+Mobile access message
+Request access
+Tell us who you are and which department you work in to request an invitation.
+
+
+HERO
+----
+Announcement
+Now with AI Script Breakdown
+
+Headline
+The Operating System
+for Film & TV Production
+
+Buttons
+- Request Access
+- Explore Workflow
+
+Proof points
+- 2,400+ production professionals
+- Private access for film & TV teams
+
+Video modal title
+Explore the Filmik workflow
+
+
+TRUSTED BY
+----------
+Trusted by production professionals worldwide
+
+- Warner Bros
+- Netflix
+- HBO
+- Amazon Studios
+- Disney+
+- Paramount
+- Apple TV+
+- Sony Pictures
+
+
+BUILT FOR EVERYONE ON SET
+-------------------------
+Eyebrow
+Built for everyone on set
+
+Headline
+Built For Every Production Team
+
+Coordinators
+Run every submission, scene, and schedule from one place.
+- Projects
+- Submission Boards
+- Calendars
+- Scene Cards
+- Communication
+
+Performers
+One professional profile. One link. Ready for coordinators.
+- Public Profiles
+- Submission Kits
+- Self-Tapes
+- Media Kits
+- Visibility
+
+Production Teams
+Every department in sync, from pre-production to wrap.
+- Documents
+- Media
+- Crew
+- Schedules
+- Approvals
+
+Independent Productions
+Everything needed to run production without spreadsheets.
+- All core tools
+- No IT required
+- Start in minutes
+- Scales with you
+
+Card link: Learn more
+
+
+PLATFORM FEATURES
+-----------------
+Eyebrow
+Platform Features
+
+Headline
+Everything You Need.
+Nothing You Don't.
+
+Projects
+Organize productions with comprehensive project management and real-time team visibility.
+
+Script Breakdown
+Detailed scene-by-scene analysis, categorization, and automated element extraction.
+
+Calendars
+Production schedules and timeline coordination across your entire team.
+
+Scene Cards
+Visual scene management with location, talent, and equipment at a glance.
+
+General Documents
+Centralized document management, version control, and secure sharing.
+
+Media
+Asset management for all production media, organized by scene and department.
+
+Memos
+Internal production communication with read receipts and threaded replies.
+
+Notifications
+Stay updated on every production change with intelligent alerts.
+
+Member Directory
+Searchable crew and talent directory with roles, availability, and contact info.
+
+Public Profiles
+Professional performer profiles and portfolios discoverable by coordinators.
+
+Submission Boards
+Talent submission management, side-by-side review, and collaborative decisions.
+
+AI
+AI-powered script breakdown - what took days now takes minutes.
+
+
+FOR COORDINATORS
+----------------
+Eyebrow
+For Coordinators
+
+Headline
+Purpose-Built for Production
+
+Description
+Real production workflow designed for how coordinators actually work - not how someone imagined they do.
+
+Workflow cards
+- Managing projects: Centralized project hub
+- Submission Boards: Review talent with ease
+- Sharing files: Secure, instant sharing
+- Assigning calendars: Team-wide scheduling
+- Managing scenes: Visual scene tracking
+- AI Script Breakdown: Days of work in minutes
+
+
+FOR PERFORMERS
+--------------
+Eyebrow
+For Performers
+
+Headline
+A Profile Built
+for Getting Hired
+
+Description
+Everything coordinators need to see - in one beautiful, shareable profile. Stop emailing PDFs. Start sharing your Filmik link.
+
+Profile labels
+- Credits
+- Self-Tapes
+- Views
+- Copy
+
+Feature labels
+- Bio & Skills
+- Photo Gallery
+- Video Reel
+- Self-Tape
+- Submission Kit
+- Hair & Makeup
+- Wardrobe Kit
+- Credits
+- Shareable URL
+
+Closing statement
+One profile. One link.
+Ready for coordinators.
+
+
+WORKFLOW
+--------
+Command Center: Dashboard
+A bird's-eye view of all active projects, upcoming deadlines, and team activity. Know exactly where your production stands at any moment.
+Status: Live sync
+
+Scene Management: Scene Cards
+Visual scene management that coordinators love. Track every detail - location, talent, props, and notes - in beautifully organized cards.
+Status: 42 scenes
+
+Talent Review: Submission Board
+Review talent submissions with ease. Side-by-side comparisons, collaborative notes, and streamlined decision-making - all in one place.
+Status: 18 pending
+
+Time Management: Calendars & Scheduling
+Production calendars that sync across your entire team. From shoot days to production meetings - keep everyone on the same schedule.
+Status: Synced
+
+Link prefix: Explore
+
+
+PRICING
+-------
+Eyebrow
+Pricing
+
+Headline
+Simple, Transparent Pricing
+
+Free-trial funnel
+Start on the pricing wall, not in a sales queue.
+
+Pick your role
+Coordinator, producer, or performer pricing tuned to your workflow.
+
+Choose the fastest path
+Jump into the recommended plan first, then compare the rest.
+
+Start your trial
+No credit card required to begin your 7-day free trial.
+
+Recommended first click
+What you unlock
+Compare plans
+Recommended
+Best starting point for teams ready to replace spreadsheets with one shared production workspace.
+
+Footer note
+All paid plans start with a 7-day free trial. No credit card required to explore the workflow first.
+
+Coordinator pricing
+Free - $0
+Get started at no cost
+- 1 active project
+- Public profile
+- Member directory
+- Basic collaboration
+- Community access
+Button: Get Started
+
+Coordinator Pro - $29/mo
+Most Popular
+Billed annually · Save 20%
+- Unlimited projects
+- Submission boards
+- Scene cards
+- Production calendars
+- File & media sharing
+- Memos & notifications
+- Priority support
+Button: Start Free Trial
+
+Team - $79/mo
+Billed annually · Up to 10 seats
+- Everything in Pro
+- 10 team seats included
+- Script breakdown (AI)
+- Advanced analytics
+- Custom workflows
+- SSO & permissions
+Button: Start Free Trial
+
+Enterprise - Custom
+For large studios and networks
+- Unlimited seats
+- Dedicated success manager
+- Custom integrations
+- SLA & uptime guarantee
+- On-prem option available
+- Legal & compliance review
+Button: Book a Demo
+
+Producer pricing
+Free - $0
+Explore core tools
+- 1 active project
+- Basic documents
+- Member directory
+- Community access
+Button: Get Started
+
+Indie Producer - $19/mo
+Billed annually
+- 3 active projects
+- Script breakdown
+- Production calendars
+- Scene cards
+- General documents
+- Crew management
+Button: Start Free Trial
+
+Production Pro - $59/mo
+Most Popular
+Billed annually · Save 20%
+- Unlimited projects
+- AI script breakdown
+- Submission boards
+- Full calendar suite
+- Media & asset management
+- Advanced reporting
+- Priority support
+Button: Start Free Trial
+
+Studio - Custom
+For studios with multiple productions
+- Multi-project dashboard
+- Cross-production analytics
+- Custom approval flows
+- Dedicated account manager
+- API & integrations
+- Enterprise security
+Button: Contact Sales
+
+Performer pricing
+Free - $0
+Start building your presence
+- Public performer profile
+- Shareable profile URL
+- Basic bio & skills
+- Photo uploads (up to 10)
+- Member directory listing
+Button: Create Profile
+
+Non-Union - $5/mo
+7-day free trial
+- Everything in Free
+- Submission kit
+- Unlimited media uploads
+- Featured self-tape
+- Hair & makeup kit
+- Wardrobe kit
+Button: Start Free Trial
+
+Performer Pro - $9/mo
+Best Value
+Billed annually · Save 20%
+- Everything in Non-Union
+- Priority listing in search
+- Advanced visibility tools
+- Multiple submission kits
+- Analytics & profile views
+- Coordinator direct messaging
+- Featured placement
+Button: Start Free Trial
+
+Agency - Custom
+For talent agencies & rosters
+- Managed talent profiles
+- Bulk submission tools
+- Agency dashboard
+- Branded profile pages
+- Priority coordinator access
+- Dedicated support
+Button: Contact Sales
+
+
+TESTIMONIALS
+------------
+Eyebrow
+Testimonials
+
+Headline
+Loved by Production Teams
+
+Sarah Chen, Production Coordinator, HBO
+Filmik has completely transformed how we manage our productions. The submission board alone has saved us countless hours every single casting cycle.
+
+Marcus Johnson, Actor & Stunt Performer, SAG-AFTRA
+As a performer, having a professional profile I can share instantly has been a game-changer. Coordinators love how clean and complete it is.
+
+Emily Rodriguez, Script Supervisor, Warner Bros
+The AI script breakdown is incredible. What used to take days now takes minutes, and it's more accurate than manual breakdown every time.
+
+
+COMMUNITY
+---------
+Eyebrow
+Community
+
+Headline
+Join the Community
+
+Description
+Stay connected with production professionals worldwide. Learn, share, and grow together.
+
+Industry News
+Stay current with the latest from film & TV - casting trends, studio news, and production updates.
+
+Events
+Production workshops, networking events, and community meetups for film professionals.
+
+Product Updates
+Be the first to know about new features, improvements, and releases across Filmik.
+
+Stunt Previz Showdown
+Annual community competition showcasing the best stunt previsualization work from our members.
+
+Release Notes
+Detailed changelog with every fix, improvement, and addition to the Filmik platform.
+
+Card link: Explore
+
+
+FINAL CALL TO ACTION
+--------------------
+Eyebrow
+Get Started Today
+
+Headline
+Spend Less Time
+Managing Production.
+More Time Making It.
+
+Description
+Join 2,400+ production professionals already using Filmik to run faster, tighter, more organized productions. Pricing is upfront and your free trial starts in a few taps.
+
+Benefits
+- Compare plans by role
+- Start free without a card
+- Upgrade when your team is ready
+
+Buttons
+- Start Free Trial
+- Review Workflow
+
+Note
+No credit card required · 7-day free trial · Cancel anytime
+
+
+REQUEST ACCESS FORM
+-------------------
+Title
+Request Access
+
+Description
+Step into the future of filmmaking. Tell us who you are and which department you belong to.
+
+Fields
+- Name
+- Your full name
+- Email
+- me@company.com
+- Which film department do you belong to?
+- Select your department
+
+Departments
+- Production
+- Casting
+- Directing
+- Camera
+- Art Department
+- Costume
+- Hair & Makeup
+- Sound
+- Post-Production
+- Stunts
+- Performer
+- Other
+
+Submit button
+Request Invitation
+
+Success message
+Request received
+Thank you! Your submission has been received.
+This local form is ready for backend wiring. For now, we're storing the flow client-side so the experience is complete while we connect Supabase later.
+
+
+FOOTER
+------
+Brand description
+The operating system for film and television production. Built for modern productions, trusted by industry professionals worldwide.
+
+Newsletter
+Stay updated
+New features, industry news, and updates - no spam.
+Enter your email
+Subscribe
+
+Legal links
+- Privacy
+- Terms
+- Cookies

@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
-
-const navLinks = [
-  { href: "#solutions", label: "Solutions" },
-  { href: "#workflow", label: "Workflow" },
-  { href: "#pricing", label: "Pricing" },
-];
+import { siteContent } from "../../content/siteContent";
 
 type NavigationProps = {
   onOpenWorkflowVideo: () => void;
@@ -14,6 +9,7 @@ type NavigationProps = {
 };
 
 export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: NavigationProps) {
+  const { navigation } = siteContent;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -57,11 +53,17 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-7">
-              {navLinks.map((link) => (
+              {navigation.links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-white/50 hover:text-white transition-colors duration-200"
+                  className={`text-sm font-semibold transition-colors duration-200 ${
+                    link.href === "#solutions"
+                      ? "text-primary hover:text-primary/75"
+                      : link.href === "#performers"
+                        ? "text-violet-300 hover:text-violet-200"
+                        : "text-white/50 hover:text-white"
+                  }`}
                 >
                   {link.label}
                 </a>
@@ -76,9 +78,9 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
                 data-analytics-event="cta_click"
                 data-analytics-label="See Workflow"
                 data-analytics-location="navigation_desktop"
-                className="px-3 py-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
+                className="rounded-lg px-3 py-1.5 text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/10 hover:text-red-200"
               >
-                See Workflow
+                {navigation.workflowCta}
               </button>
               <button
                 type="button"
@@ -88,7 +90,7 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
                 data-analytics-location="navigation_desktop"
                 className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:-translate-y-px hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 active:translate-y-0"
               >
-                Request Access
+                {navigation.requestAccessCta}
               </button>
             </div>
 
@@ -101,7 +103,7 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
                 data-analytics-location="navigation_mobile"
                 className="rounded-lg bg-primary px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90"
               >
-                Request Access
+                {navigation.requestAccessCta}
               </button>
               <button
                 className="flex h-10 w-10 items-center justify-center rounded-lg text-white/70 transition-colors hover:bg-white/5 hover:text-white"
@@ -138,17 +140,23 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
           >
             <div className="mb-4 rounded-2xl border border-primary/20 bg-primary/10 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
-                Request access
+                {navigation.mobile.title}
               </p>
               <p className="mt-2 text-sm text-white/75">
-                Tell us who you are and which department you work in to request an invitation.
+                {navigation.mobile.description}
               </p>
             </div>
-            {navLinks.map((link, i) => (
+            {navigation.links.map((link, i) => (
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="flex items-center h-12 text-base font-medium text-white/70 hover:text-white transition-colors rounded-lg px-3 hover:bg-white/5"
+                className={`flex h-12 items-center rounded-lg px-3 text-base font-semibold transition-colors hover:bg-white/5 ${
+                  link.href === "#solutions"
+                    ? "text-primary hover:text-primary/75"
+                    : link.href === "#performers"
+                      ? "text-violet-300 hover:text-violet-200"
+                      : "text-white/70 hover:text-white"
+                }`}
                 onClick={() => setMobileOpen(false)}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -170,7 +178,7 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
                   onOpenWorkflowVideo();
                 }}
               >
-                Explore Workflow
+                {navigation.mobile.workflowCta}
               </button>
               <button
                 type="button"
@@ -183,7 +191,7 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
                 data-analytics-location="navigation_drawer"
                 className="flex h-12 w-full items-center justify-center rounded-lg bg-primary text-sm font-semibold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25"
               >
-                Request Access
+                {navigation.requestAccessCta}
               </button>
             </div>
           </motion.div>
@@ -200,7 +208,7 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
               data-analytics-location="sticky_mobile_bar"
               className="flex h-12 flex-1 items-center justify-center rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 text-sm font-semibold text-white/85"
             >
-              See Plans
+              {navigation.mobile.pricingCta}
             </a>
             <button
               type="button"
@@ -210,7 +218,7 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
               data-analytics-location="sticky_mobile_bar"
               className="flex h-12 flex-[1.3] items-center justify-center rounded-xl bg-primary px-4 text-sm font-semibold text-white shadow-lg shadow-primary/25"
             >
-              Request Access
+              {navigation.requestAccessCta}
             </button>
           </div>
         </div>

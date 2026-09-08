@@ -1,5 +1,59 @@
 @custom-variant dark (&:is(.dark *));
 
+@keyframes ambient-drift-one {
+  0%, 100% { transform: translate3d(-8%, -6%, 0) scale(1); }
+  50% { transform: translate3d(14%, 12%, 0) scale(1.2); }
+}
+
+@keyframes ambient-drift-two {
+  0%, 100% { transform: translate3d(10%, 8%, 0) scale(1.08); }
+  50% { transform: translate3d(-14%, -10%, 0) scale(0.94); }
+}
+
+.ambient-page-motion {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 1;
+}
+
+.ambient-orb {
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.12;
+  position: absolute;
+  will-change: transform;
+}
+
+.ambient-orb-one {
+  animation: ambient-drift-one 26s ease-in-out infinite;
+  background: #2563eb;
+  height: 42vw;
+  left: -16vw;
+  top: 18vh;
+  width: 42vw;
+}
+
+.ambient-orb-two {
+  animation: ambient-drift-two 32s ease-in-out infinite;
+  background: #0ea5e9;
+  bottom: 4vh;
+  height: 36vw;
+  right: -12vw;
+  width: 36vw;
+}
+
+@media (max-width: 640px) {
+  .ambient-orb { filter: blur(64px); opacity: 0.09; }
+  .ambient-orb-one { height: 75vw; width: 75vw; }
+  .ambient-orb-two { height: 68vw; width: 68vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orb { animation: none; }
+}
+
 :root {
   --font-size: 16px;
   --font-sans: "Inter", system-ui, sans-serif;

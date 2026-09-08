@@ -6,10 +6,10 @@
   <rect x="112" y="118" width="182" height="182" rx="40" fill="url(#logo)"/>
   <path d="M184.778 177H225.223V195.338H210.946V251H198.946V195.338H184.778V177Z" fill="white"/>
   <path d="M150 177H180.147L200.771 210.393V251H188.771V214.055L168.5 181.151H150V177Z" fill="white" fill-opacity="0.88"/>
-  <text x="112" y="372" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.68">Film &amp; TV Production Management Platform</text>
+  <text x="112" y="372" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.68">Stunt Department Workflow for Film &amp; TV Production</text>
   <text x="112" y="440" fill="white" font-family="Outfit, Inter, Arial, sans-serif" font-size="72" font-weight="800">Filmik</text>
-  <text x="112" y="506" fill="white" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" opacity="0.8">Run submissions, calendars, scene cards, and approvals in one workspace.</text>
-  <text x="112" y="548" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600">Start your 7-day free trial without a sales queue.</text>
+  <text x="112" y="506" fill="white" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" opacity="0.8">Organize teams, scene information, and access in one workspace.</text>
+  <text x="112" y="548" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600">Built for stunt departments. Connected to production.</text>
   <defs>
     <linearGradient id="panel" x1="112" y1="92" x2="1041" y2="566" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0F172A"/>

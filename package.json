@@ -6,7 +6,8 @@
   "scripts": {
     "seo:sync": "node scripts/sync-seo.mjs",
     "build": "npm run seo:sync && vite build",
-    "dev": "npm run seo:sync && vite"
+    "dev": "npm run seo:sync && vite",
+    "leads:report": "node --env-file=.env.local scripts/lead-report.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

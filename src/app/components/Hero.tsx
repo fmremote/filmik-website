@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, X, Play } from "lucide-react";
+import { siteContent } from "../../content/siteContent";
 
 type HeroProps = {
   isWorkflowVideoOpen: boolean;
@@ -15,6 +16,7 @@ export function Hero({
   onCloseWorkflowVideo,
   onOpenRequestAccess,
 }: HeroProps) {
+  const { hero } = siteContent;
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -27,7 +29,6 @@ export function Hero({
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden" id="top">
-      <div id="workflow" className="absolute top-0" />
       <div className="absolute inset-0 bg-[#02060b]" />
       <video
         className="absolute inset-0 h-full w-full object-cover"
@@ -58,14 +59,12 @@ export function Hero({
         <div className="text-center max-w-5xl mx-auto">
           {/* Eyebrow badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-white/60 text-xs font-medium tracking-wide mb-6 sm:mb-8"
+            className="inline-flex items-center rounded-full border border-white/[0.08] bg-white/[0.04] px-3.5 py-1.5 text-xs font-medium tracking-wide text-white/60 mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Now with AI Script Breakdown
-            <ArrowRight className="w-3.5 h-3.5 text-primary" />
+            {hero.announcement}
           </motion.div>
 
           {/* Headline */}
@@ -77,13 +76,22 @@ export function Hero({
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="bg-gradient-to-b from-white via-white to-white/50 bg-clip-text text-transparent">
-              The Operating System
+              {hero.headline[0]}
             </span>
             <br />
             <span className="bg-gradient-to-r from-primary via-[#8CA2C2] to-secondary bg-clip-text text-transparent">
-              for Film &amp; TV Production
+              {hero.headline[1]}
             </span>
           </motion.h1>
+
+          <motion.p
+            className="mx-auto mb-7 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+          >
+            {hero.description}
+          </motion.p>
 
           {/* CTA row */}
           <motion.div
@@ -100,7 +108,7 @@ export function Hero({
               data-analytics-location="hero"
               className="group flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 sm:w-auto"
             >
-              Request Access
+              {hero.requestAccessCta}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </button>
             <button
@@ -114,7 +122,7 @@ export function Hero({
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                 <Play className="w-3 h-3 fill-current ml-0.5" />
               </div>
-              Explore Workflow
+              {hero.workflowCta}
             </button>
           </motion.div>
 
@@ -125,9 +133,9 @@ export function Hero({
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <span>2,400+ production professionals</span>
+            <span>{hero.proof[0]}</span>
             <span className="w-1 h-1 rounded-full bg-white/20" />
-            <span>Private access for film &amp; TV teams</span>
+            <span>{hero.proof[1]}</span>
           </motion.div>
         </div>
       </div>
@@ -145,7 +153,7 @@ export function Hero({
           <div className="relative w-full max-w-5xl overflow-hidden rounded-2xl border border-white/15 bg-[#101722] shadow-2xl">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-5">
               <h2 id="workflow-video-title" className="text-base font-semibold text-white">
-                Explore the Filmik workflow
+                {hero.videoModalTitle}
               </h2>
               <button
                 type="button"

@@ -1,0 +1,197 @@
+FILMIK WEBSITE COPY - VERSION 3
+================================
+
+Purpose
+-------
+Version 3 builds on Version 2. It keeps Filmik's focus on stunt-department
+workflows, permission-based collaboration, performer visibility, and the
+production teams that coordinate with them. Sections not listed below remain
+approved as written in Version 2.
+
+
+NAVIGATION
+----------
+Links
+- For Stunt Departments
+- For Performers
+- How It Works
+- Plans
+
+Navigation emphasis
+- Highlight For Stunt Departments in Filmik blue.
+- Highlight For Performers in violet.
+
+The For Performers link should take visitors directly to the Performer Hub
+section. It makes both core entry points clear from the first interaction.
+
+
+HERO
+----
+Announcement
+Built for stunt departments. Connected to production.
+
+Presentation note
+Show this line without a leading status bullet or trailing arrow.
+
+
+FOR STUNT DEPARTMENTS
+---------------------
+Scene Cards card
+
+Title
+Scene Cards
+
+Description
+Keep action-scene information organized in collaborative cards the right team
+members can access and share.
+
+Supporting points
+- One organized scene view
+- Share with the right team
+- Built for review and updates
+
+
+Calendars & Scheduling card
+
+Title
+Calendars & Scheduling
+
+Description
+Schedule your team, organize production dates, and keep everyone aligned as
+the schedule changes.
+
+Supporting points
+- Team and department views
+- Reuse schedule details
+- Clear time-zone updates
+
+
+SCENE CARDS: MODULE DETAIL
+--------------------------
+Eyebrow
+Scene Cards
+
+Headline
+Turn scripts into collaborative action plans.
+
+Description
+Filmik redefines how departments break down and prepare scripts by transforming
+static text into actionable, collaborative data sheets.
+
+Automated Script Breakdown
+Automatically identify relevant action information and use it to pre-populate
+Scene Cards, giving the department an organized starting point to review and
+expand.
+
+Shared Scene Information
+Keep characters, action notes, equipment, and safety details together in one
+card that the appropriate team members can access.
+
+Ready for Department Review
+Refine stunt sequences, equipment, performer details, and notes together as
+the scene develops, without scattering the work across documents.
+
+Standardized Scene Numbering
+Use combined season-episode-scene numbering for block shoots, avoiding
+duplicate scene numbers across scripts.
+
+
+CALENDARS & SCHEDULING: MODULE DETAIL
+-------------------------------------
+Headline
+Keep large teams in sync, wherever they work.
+
+Description
+Schedule your team, organize production dates, and keep everyone aligned as
+the schedule changes across departments.
+
+Multi-View Team Board
+Filter crews by daily schedules, weekly calendars, departments, roles, or
+episodes to make large team coordination easier.
+
+Reuse Schedule Details
+Move shoots, fittings, and rehearsals to new dates without rebuilding the
+details your team already needs.
+
+Smart Time Zone Architecture
+Location shifts automatically adjust notification timing and display clear zone
+conversions so nobody misses a call time.
+
+Week Lock Protection
+Protect locked performer schedules with explicit warnings and admin overrides
+to help prevent costly cancellation penalties.
+
+
+PLATFORM FEATURES
+-----------------
+Replace this feature label:
+Automation and AI
+
+With:
+Automated Workflows
+
+Description
+Tools that help reduce repetitive setup work. Details coming soon.
+
+
+PRICING
+-------
+All plan-card buttons use the same label and action:
+
+Button
+Request Access
+
+Behavior
+Open the self-hosted Request Access modal for Basic, Pro, Department Heads,
+and Enterprise. Do not use Get Started, Choose Pro, or Contact Sales.
+
+
+DEPARTMENT-LED COLLABORATION
+----------------------------
+Replace this workflow card:
+AI Script Breakdown: Days of work in minutes
+
+With:
+Action Breakdown: Days of work in minutes
+
+
+FOR PERFORMERS
+--------------
+Eyebrow
+For Performers
+
+Headline
+A Profile Built
+for Getting Hired
+
+Description
+Build one professional hub for your experience, skills, media, photos, reels,
+and project-ready files. Keep your materials organized, choose what to share
+for each opportunity, and make your work discoverable to the people doing the
+hiring.
+
+Profile feature labels
+- Bio & Skills
+- Photo Gallery
+- Video Reel
+- Self-Tape
+- Submission Kit
+- Hair & Makeup
+- Wardrobe Kit
+- Credits
+- Shareable URL
+
+Closing statement
+One profile. One link.
+Ready when the right opportunity comes up.
+
+
+TESTIMONIALS
+------------
+Where the approved testimonial references the former AI script breakdown,
+use Action Breakdown instead. Avoid implying a fully autonomous workflow;
+describe it as a stronger starting point for the department to review.
+
+Approved wording
+The action breakdown is incredible. What used to take days now takes minutes,
+and it gives us a much stronger starting point than beginning from scratch.

@@ -1,37 +1,24 @@
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
+import { siteContent } from "../../content/siteContent";
 
-const testimonials = [
+const testimonialStyles = [
   {
-    quote: "Filmik has completely transformed how we manage our productions. The submission board alone has saved us countless hours every single casting cycle.",
-    author: "Sarah Chen",
-    role: "Production Coordinator",
-    company: "HBO",
-    avatar: "SC",
     gradient: "from-blue-500 to-cyan-500",
     stars: 5,
   },
   {
-    quote: "As a performer, having a professional profile I can share instantly has been a game-changer. Coordinators love how clean and complete it is.",
-    author: "Marcus Johnson",
-    role: "Actor & Stunt Performer",
-    company: "SAG-AFTRA",
-    avatar: "MJ",
     gradient: "from-violet-500 to-purple-600",
     stars: 5,
   },
   {
-    quote: "The AI script breakdown is incredible. What used to take days now takes minutes, and it's more accurate than manual breakdown every time.",
-    author: "Emily Rodriguez",
-    role: "Script Supervisor",
-    company: "Warner Bros",
-    avatar: "ER",
     gradient: "from-rose-500 to-pink-600",
     stars: 5,
   },
 ];
 
 export function Testimonials() {
+  const testimonials = siteContent.testimonials.cards.map(([quote, author, role, company, avatar], index) => ({ ...testimonialStyles[index], quote, author, role, company, avatar }));
   return (
     <section className="py-20 sm:py-32 relative overflow-hidden" id="testimonials">
       <div className="absolute inset-0 bg-[#07070d]" />
@@ -45,15 +32,15 @@ export function Testimonials() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.07] text-white/40 text-xs font-semibold tracking-wider uppercase mb-6">
-            Testimonials
+            {siteContent.testimonials.eyebrow}
           </div>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Loved by{" "}
+            {siteContent.testimonials.heading[0]}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Production Teams
+              {siteContent.testimonials.heading[1]}
             </span>
           </h2>
         </motion.div>

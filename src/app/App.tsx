@@ -7,6 +7,7 @@ import { Features } from "./components/Features";
 import { ProductShowcase } from "./components/ProductShowcase";
 import { PerformerSection } from "./components/PerformerSection";
 import { CoordinatorSection } from "./components/CoordinatorSection";
+import { MemberDirectory } from "./components/MemberDirectory";
 import { Pricing } from "./components/Pricing";
 import { Testimonials } from "./components/Testimonials";
 import { Community } from "./components/Community";
@@ -63,6 +64,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
+      <div className="ambient-page-motion" aria-hidden="true">
+        <span className="ambient-orb ambient-orb-one" />
+        <span className="ambient-orb ambient-orb-two" />
+      </div>
       <Navigation
         onOpenWorkflowVideo={() => openWorkflowVideo("navigation")}
         onOpenRequestAccess={() => openRequestAccess("navigation")}
@@ -77,15 +82,19 @@ export default function App() {
         <LogoCloud />
         <ProductionTeams />
         <ProductShowcase />
-        <Pricing />
-        <Features />
         <CoordinatorSection />
         <PerformerSection />
+        <MemberDirectory />
+        <Features />
+        <Pricing onOpenRequestAccess={() => openRequestAccess("pricing")} />
         <Testimonials />
         <Community />
-        <FinalCTA />
+        <FinalCTA
+          onOpenRequestAccess={() => openRequestAccess("final_cta")}
+          onOpenWorkflowVideo={() => openWorkflowVideo("final_cta")}
+        />
       </main>
-      <Footer />
+      <Footer onOpenRequestAccess={() => openRequestAccess("footer")} />
       <RequestAccessModal open={isRequestAccessOpen} onOpenChange={setIsRequestAccessOpen} onClose={closeRequestAccess} />
     </div>
   );

@@ -1,16 +1,12 @@
 import { motion } from "motion/react";
 import { FolderKanban, LayoutGrid, FileUp, Calendar, Clapperboard, Sparkles } from "lucide-react";
+import { siteContent } from "../../content/siteContent";
 
-const workflows = [
-  { icon: FolderKanban, label: "Managing projects", desc: "Centralized project hub", color: "text-blue-400", bg: "from-blue-500/15 to-blue-500/5" },
-  { icon: LayoutGrid, label: "Submission Boards", desc: "Review talent with ease", color: "text-violet-400", bg: "from-violet-500/15 to-violet-500/5" },
-  { icon: FileUp, label: "Sharing files", desc: "Secure, instant sharing", color: "text-emerald-400", bg: "from-emerald-500/15 to-emerald-500/5" },
-  { icon: Calendar, label: "Assigning calendars", desc: "Team-wide scheduling", color: "text-amber-400", bg: "from-amber-500/15 to-amber-500/5" },
-  { icon: Clapperboard, label: "Managing scenes", desc: "Visual scene tracking", color: "text-rose-400", bg: "from-rose-500/15 to-rose-500/5" },
-  { icon: Sparkles, label: "AI Script Breakdown", desc: "Days of work in minutes", color: "text-fuchsia-400", bg: "from-fuchsia-500/15 to-fuchsia-500/5" },
-];
+const workflowStyles = [[FolderKanban, "text-blue-400", "from-blue-500/15 to-blue-500/5"], [LayoutGrid, "text-violet-400", "from-violet-500/15 to-violet-500/5"], [FileUp, "text-emerald-400", "from-emerald-500/15 to-emerald-500/5"], [Calendar, "text-amber-400", "from-amber-500/15 to-amber-500/5"], [Clapperboard, "text-rose-400", "from-rose-500/15 to-rose-500/5"], [Sparkles, "text-fuchsia-400", "from-fuchsia-500/15 to-fuchsia-500/5"]] as const;
 
 export function CoordinatorSection() {
+  const workflows = siteContent.coordinator.cards.map(([label, desc], index) => ({ label, desc, icon: workflowStyles[index][0], color: workflowStyles[index][1], bg: workflowStyles[index][2] }));
+  const { coordinator } = siteContent;
   return (
     <section className="py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b14] to-[#07070d]" />
@@ -24,19 +20,19 @@ export function CoordinatorSection() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wider uppercase mb-5 sm:mb-6">
-            For Coordinators
+            {coordinator.eyebrow}
           </div>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-5"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Purpose-Built for{" "}
+            {coordinator.heading[0]}{" "}
             <span className="bg-gradient-to-r from-primary to-sky-400 bg-clip-text text-transparent">
-              Production
+              {coordinator.heading[1]}
             </span>
           </h2>
           <p className="text-sm sm:text-lg text-white/45 max-w-2xl mx-auto px-2">
-            Real production workflow designed for how coordinators actually work — not how someone imagined they do.
+            {coordinator.description}
           </p>
         </motion.div>
 
@@ -86,22 +82,20 @@ export function CoordinatorSection() {
             </div>
             <div className="flex-1 mx-2 sm:mx-4">
               <div className="h-3 sm:h-4 w-36 sm:w-44 rounded bg-white/[0.04] mx-auto flex items-center justify-center">
-                <span className="text-[8px] sm:text-[9px] text-white/20 font-mono">app.filmik.io/productions/project-x</span>
+                <span className="text-[8px] sm:text-[9px] text-white/35 font-mono">app.filmik.io</span>
               </div>
             </div>
+            <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-1.5 py-0.5 text-[8px] font-semibold text-emerald-300 sm:px-2 sm:text-[9px]">Department workspace</span>
           </div>
 
           {/* UI content */}
-          <div className="bg-gradient-to-br from-[#0d0d1f] to-[#0a0a18] p-4 sm:p-6 lg:p-10">
+          <div className="bg-[#f6f7f9]">
+            <img src="/images/department-lead-collaboration.webp" alt="Filmik department-led collaboration workspace" className="block w-full" />
+            <div className="hidden">
             {/* Mobile: simplified stats only */}
             <div className="sm:hidden space-y-3">
               <div className="grid grid-cols-2 gap-2">
-                {[
-                  { label: "Scenes", val: "42", color: "text-blue-400" },
-                  { label: "Submissions", val: "18", color: "text-emerald-400" },
-                  { label: "Crew", val: "31", color: "text-violet-400" },
-                  { label: "Shoot Days", val: "12", color: "text-amber-400" },
-                ].map((s) => (
+                {coordinator.mockup.stats.map(([label, val], index) => ({ label, val, color: ["text-blue-400", "text-emerald-400", "text-violet-400", "text-amber-400"][index] })).map((s) => (
                   <div key={s.label} className="bg-white/[0.03] border border-white/[0.05] rounded-xl p-3.5">
                     <div className={`text-2xl font-bold ${s.color} mb-1`} style={{ fontFamily: "var(--font-display)" }}>{s.val}</div>
                     <div className="text-xs text-white/30">{s.label}</div>
@@ -128,7 +122,7 @@ export function CoordinatorSection() {
                 <div className="h-8 bg-primary/20 rounded-lg mb-4 flex items-center px-3">
                   <div className="h-2 w-20 bg-primary/50 rounded" />
                 </div>
-                {["Dashboard", "Scene Cards", "Submissions", "Calendar", "Documents"].map((item, i) => (
+                {coordinator.mockup.navigation.map((item, i) => (
                   <div key={item} className={`h-8 rounded-lg px-3 flex items-center ${i === 1 ? "bg-white/[0.06]" : "bg-white/[0.02]"}`}>
                     <div className="h-2 w-16 bg-white/[0.15] rounded" />
                   </div>
@@ -140,12 +134,7 @@ export function CoordinatorSection() {
                   <div className="h-7 w-28 bg-primary/25 rounded-lg" />
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  {[
-                    { label: "Scenes", val: "42", color: "text-blue-400" },
-                    { label: "Submissions", val: "18", color: "text-emerald-400" },
-                    { label: "Crew", val: "31", color: "text-violet-400" },
-                    { label: "Shoot Days", val: "12", color: "text-amber-400" },
-                  ].map((s) => (
+                  {coordinator.mockup.stats.map(([label, val], index) => ({ label, val, color: ["text-blue-400", "text-emerald-400", "text-violet-400", "text-amber-400"][index] })).map((s) => (
                     <div key={s.label} className="bg-white/[0.03] border border-white/[0.05] rounded-xl p-4">
                       <div className={`text-xl font-bold ${s.color} mb-1`} style={{ fontFamily: "var(--font-display)" }}>{s.val}</div>
                       <div className="text-xs text-white/30">{s.label}</div>
@@ -167,6 +156,7 @@ export function CoordinatorSection() {
                   ))}
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </motion.div>

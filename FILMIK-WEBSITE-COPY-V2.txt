@@ -1,0 +1,521 @@
+FILMIK WEBSITE COPY - VERSION 2
+================================
+
+Purpose
+-------
+This version describes Filmik accurately today: a production workflow platform
+that starts with the stunt department, helps teams manage their work and
+permissions, and connects the right production partners when needed.
+
+Do not use unsupported claims about studio customers, full-production adoption,
+AI capabilities, or a free trial until those are confirmed.
+
+
+NAVIGATION
+----------
+Links
+- For Stunt Departments
+- How It Works
+- Plans
+
+Video button
+Watch the Workflow
+
+Primary button
+Request Access
+
+Mobile access message
+Request access
+Tell us who you are and which department you work in to request an invitation.
+
+
+HERO
+----
+Announcement
+Built for stunt departments. Connected to production.
+
+Headline
+The Stunt Department Workflow
+for Film & TV Production
+
+Supporting line
+Keep your team, talent, scene information, and production coordination in one
+permission-based workspace.
+
+Primary button
+Request Access
+
+Video button
+Watch the Workflow
+
+Proof points
+- Built around real stunt department workflows
+- Permission-based access for every collaborator
+
+Video modal title
+See how Filmik supports the stunt department workflow
+
+
+EXPERIENCE BAR
+--------------
+Replace the current studio-logo bar. Do not show studio names or imply their
+endorsement unless Filmik has explicit permission to do so.
+
+Heading
+Built by production professionals for the teams that keep sets moving.
+
+Supporting line
+Filmik starts with the stunt department, then gives production offices and
+department heads the information they need, when they need it.
+
+Optional proof items, only if verified
+- Built for feature and episodic work
+- Designed around real department workflows
+- Made for controlled, permission-based collaboration
+
+
+FOR STUNT DEPARTMENTS
+---------------------
+Eyebrow
+Built for the stunt department
+
+Headline
+Run the work. Share only what production needs.
+
+Description
+Filmik gives stunt departments one place to manage team information, scenes,
+documents, and day-to-day coordination. Invite the production office or other
+department heads into the right information without opening up the whole
+workspace.
+
+Cards
+Team management
+Keep the people, roles, and information your department relies on organized in
+one place.
+
+Scene information
+Track scene-specific notes, equipment, and department details at a glance.
+
+Documents and media
+Store the working files your team needs and share them with the right people.
+
+Production coordination
+Give production the visibility they need without creating another spreadsheet
+or chasing updates across text threads.
+
+Permission-based access
+Every collaborator sees only the projects, information, and tools they have
+been given access to.
+
+
+WORKFLOW SHOWCASE
+-----------------
+Keep this section concise. It should introduce the workflow, not attempt to
+explain every feature.
+
+Command Center
+Your Department, In One Place
+See active work, upcoming needs, and team activity without jumping between
+spreadsheets, texts, and folders.
+Status: Live sync
+
+Scene Information
+Scene Cards
+Keep scene-specific information, equipment, notes, and department details in
+one clear view.
+Status: 42 scenes
+
+Team Review
+Submission Board
+Review talent and submissions with the right people involved, organized in one
+shared place.
+Status: 18 pending
+
+Scheduling
+Calendars & Scheduling
+Keep your department aligned on shoot days, meetings, and the details that
+change throughout production.
+Status: Synced
+
+Quiet permission line below the section
+Share what matters. Keep the rest private.
+
+Link label
+See the workflow
+
+
+MEMBER DIRECTORY
+----------------
+This should be its own full section, not a feature tile.
+
+Eyebrow
+The Filmik Directory
+
+Headline
+The right people, ready when you need them.
+
+Description
+For coordinators and department heads, Filmik makes it easier to find talent,
+review the information that matters, and bring the right people onto a project.
+For performers, it is a professional place to present their work to the people
+doing the hiring.
+
+Coordinator and department-head column
+Find the right talent without chasing down information.
+- Search people, skills, credits, and project-ready materials
+- Review the information you need in one place
+- Add the right people to a project with the right access
+
+Performer column
+Put your work in front of the people who need it.
+- Build one professional Filmik profile
+- Share your work, media, and relevant details clearly
+- Be easier to discover when a department is building its team
+
+Closing line
+One directory that works both ways: better access for departments, better
+visibility for performers.
+
+Primary button
+Explore the Directory
+
+
+PLATFORM FEATURES
+-----------------
+Eyebrow
+Built for the work on set
+
+Headline
+The tools your department uses.
+The control production needs.
+
+Projects
+Keep department work organized around the projects and people involved.
+
+Script Breakdown
+Organize scene-by-scene information for the action department.
+
+Calendars
+Coordinate shoot days, meetings, and departmental schedules in one place.
+
+Scene Cards
+Keep scene-specific information and equipment at a glance.
+
+General Documents
+Keep working documents organized, current, and ready to share with the right
+people.
+
+Media
+Organize production media by project, scene, and department.
+
+Memos
+Share production communication where your team can find it.
+
+Notifications
+Stay informed when the work that affects you changes.
+
+Member Directory
+Find talent and bring the right people into your project.
+
+Public Profiles
+Give performers a clear, professional way to share their work.
+
+Submission Boards
+Review talent and submissions with the right people involved.
+
+Automation and AI
+Tools that help reduce repetitive setup work. Details coming soon.
+
+
+FOR PERFORMERS
+--------------
+Eyebrow
+For Performers
+
+Headline
+A Profile Built
+for Getting Hired
+
+Description
+Give coordinators and department heads one clear place to see your experience,
+skills, media, and project-ready information. Stop sending scattered files.
+Start sharing your Filmik profile.
+
+Profile feature labels
+- Bio & Skills
+- Photo Gallery
+- Video Reel
+- Self-Tape
+- Submission Kit
+- Hair & Makeup
+- Wardrobe Kit
+- Credits
+- Shareable Profile
+
+Closing statement
+One profile. One link.
+Ready when the right opportunity comes up.
+
+Primary button
+Build Your Profile
+
+
+PLANS
+-----
+Use the plan structure and feature language below. It reflects the current
+Filmik application screenshots. Do not publish a producer plan or a free-trial
+claim until those are operational and approved.
+
+Section eyebrow
+Choose Your Plan
+
+Headline
+Plans for talent, department heads, and production teams.
+
+Section description
+Start with the access that fits your role today. Upgrade when your work and
+team need more.
+
+Basic
+For Talent
+Great for talent wanting basic exposure.
+
+Price
+$0 / month
+Billed yearly
+
+Key features
+- Access to Basic level
+- Talent data and profile
+- Talent Kits
+- Basic level media
+
+Button
+Get Started
+
+Pro
+For Talent
+Great for talent wanting to be considered for production submissions and
+networking.
+
+Price
+$9 / month
+Billed yearly
+
+Badge
+Most Popular
+
+Key features
+- Premium Visual Branding
+- Prioritized Search Results
+- Enhanced Media Integration
+- Professional Connectivity
+- Enhanced Photo Management
+- Dedicated Looks and Submissions
+
+Coming to Filmik
+- Advanced Skill Ratings
+- Access to Hustle Features
+- Profile Analytics
+- Availability Calendar
+- Job Board
+- Public Facing Profile
+
+Button
+Choose Pro
+
+Department Heads
+For Coordinators
+Great for managing all aspects of feature and episodic productions.
+
+Price
+Custom Pricing
+
+Key features
+- Access to Production Suite
+- Feature and Episodic Projects
+- Team Management
+- Team Calendar
+- Production Memos
+- Script Breakdown
+- Scene Cards and Notes
+- Private Previz
+- Document Repository
+- Enhanced Workflow Security
+- Localization for Main Markets
+- Multi-role for Users
+- Access to Archives
+
+Coming to Filmik
+- Budget Assistant
+- Risk Assessments
+- Team Management enhancements
+
+Button
+Contact Sales
+
+Enterprise
+For Production Companies
+Great for production companies that need to organize and grant access to
+production teams.
+
+Price
+Custom Pricing
+
+Key features
+- All Department Head features
+- Production Hubs
+- User Groups
+- Access Controls
+
+Coming to Filmik
+- Reporting and Analytics
+- Promotional Codes
+- Dedicated Account Manager
+- Custom Integrations
+- Priority Support
+
+Button
+Contact Sales
+
+Plan footnote
+* Coming features.
+
+Compare plans title
+Compare Plans
+
+Compare plans introduction
+Filmik offers flexible membership tiers for every stage of production. Basic
+provides essential access to talent profiles and media. Pro for Talent adds
+professional tools for stronger presentation and connection. Department Heads
+gain production-management capabilities, while Enterprise adds the controls
+and support needed for larger teams.
+
+
+TESTIMONIALS
+------------
+Eyebrow
+What Filmik members say
+
+Headline
+Built around the people doing the work.
+
+Instruction
+Use only approved, real testimonials from the current Filmik website or written
+approval from the person quoted. Do not use placeholder names, companies, or
+quotes.
+
+
+COMMUNITY
+---------
+Eyebrow
+The Filmik Community
+
+Headline
+Stay connected to the people moving the industry.
+
+Description
+Follow Filmik for events, the Stunt Previz Showdown, product updates, practical
+production conversations, and the work our community is proud to share.
+
+Community destinations
+Industry News
+Production stories, conversations, and updates from the work happening now.
+
+Events
+Workshops, networking, screenings, and community meetups for film
+professionals.
+
+Stunt Previz Showdown
+A home for the annual showcase celebrating great stunt previsualization work.
+
+Product Updates
+See what is new, what is improving, and what is coming next to Filmik.
+
+Follow Filmik
+YouTube, Instagram, LinkedIn, and X.
+
+Card link
+Explore
+
+
+FINAL CALL TO ACTION
+--------------------
+Eyebrow
+Bring Your Department Together
+
+Headline
+Less chasing information.
+More time doing the work.
+
+Description
+See how Filmik helps stunt departments stay organized, share the right details,
+and coordinate with production without giving up control of the workspace.
+
+Primary button
+Request Access
+
+Secondary button
+Watch the Workflow
+
+Trust line
+Built for department-led collaboration. Permission-based by design.
+
+
+REQUEST ACCESS FORM
+-------------------
+Title
+Request Access
+
+Description
+Tell us about your role and department. We will follow up with the right next
+step for your team.
+
+Fields
+- Name
+- Email
+- Which film department do you belong to?
+
+Department options
+- Stunts
+- Production
+- Casting
+- Directing
+- Camera
+- Art Department
+- Costume
+- Hair & Makeup
+- Sound
+- Post-Production
+- Performer
+- Other
+
+Submit button
+Request Access
+
+Success message
+Thanks - we received your request.
+Our team will review your details and follow up soon.
+
+
+FOOTER
+------
+Brand description
+Filmik helps stunt departments organize their work, manage access, and
+coordinate with the production teams around them.
+
+Newsletter
+Stay in the loop
+Events, product updates, and community news from Filmik. No spam.
+Enter your email
+Subscribe
+
+Suggested footer links
+- For Stunt Departments
+- The Filmik Directory
+- How It Works
+- Plans
+- Community
+- Contact
+- Privacy
+- Terms

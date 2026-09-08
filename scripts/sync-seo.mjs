@@ -7,6 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const publicDir = path.join(rootDir, "public");
 const indexPath = path.join(rootDir, "index.html");
+const faviconVersion = "brandmark-20260903d";
 
 const absoluteUrl = (inputPath = "/") =>
   new URL(inputPath, siteConfig.siteUrl.endsWith("/") ? siteConfig.siteUrl : `${siteConfig.siteUrl}/`).toString();
@@ -54,13 +55,11 @@ const schemaGraph = {
       operatingSystem: "Web",
       description: siteConfig.description,
       url: siteConfig.siteUrl,
-      offers: [
-        {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-          description: "7-day free trial and free starting tier.",
-        },
+      featureList: [
+        "Stunt department team management",
+        "Scene information and notes",
+        "Permission-based project access",
+        "Talent directory and performer profiles",
       ],
       audience: siteConfig.appTargets.map((audienceType) => ({
         "@type": "Audience",
@@ -75,17 +74,17 @@ const schemaGraph = {
 
 const llms = `# Filmik
 
-> Filmik is the operating system for film and television production.
+> Filmik is a stunt department workflow platform for film and television production.
 
-Filmik helps coordinators, producers, and performers manage submissions, calendars, scene cards, documents, and trial signups in one workspace.
+Filmik helps stunt departments organize teams, scene information, documents, and permissions while coordinating with production. It also gives performers a professional profile and helps department heads find project-ready talent.
 
 ## Canonical site
 - ${siteConfig.siteUrl}
 
 ## Primary audience
-- Coordinators managing submissions and scene cards
-- Producers running projects, calendars, and approvals
-- Performers sharing profiles, reels, and submission kits
+- Stunt departments managing teams, scene information, and department workflows
+- Coordinators and department heads managing controlled project access
+- Performers sharing profiles, media, and project-ready information
 
 ## Key pages
 ${siteConfig.navigationPages.map(({ path: pagePath }) => `- ${absoluteUrl(pagePath)}`).join("\n")}
@@ -104,7 +103,7 @@ const manifest = {
   theme_color: siteConfig.themeColor,
   icons: [
     {
-      src: "/favicon.svg",
+      src: `/favicon.svg?v=${faviconVersion}`,
       sizes: "any",
       type: "image/svg+xml",
       purpose: "any",
@@ -140,10 +139,10 @@ const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none"
   <rect x="112" y="118" width="182" height="182" rx="40" fill="url(#logo)"/>
   <path d="M184.778 177H225.223V195.338H210.946V251H198.946V195.338H184.778V177Z" fill="white"/>
   <path d="M150 177H180.147L200.771 210.393V251H188.771V214.055L168.5 181.151H150V177Z" fill="white" fill-opacity="0.88"/>
-  <text x="112" y="372" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.68">Film &amp; TV Production Management Platform</text>
+  <text x="112" y="372" fill="white" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.68">Stunt Department Workflow for Film &amp; TV Production</text>
   <text x="112" y="440" fill="white" font-family="Outfit, Inter, Arial, sans-serif" font-size="72" font-weight="800">Filmik</text>
-  <text x="112" y="506" fill="white" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" opacity="0.8">Run submissions, calendars, scene cards, and approvals in one workspace.</text>
-  <text x="112" y="548" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600">Start your 7-day free trial without a sales queue.</text>
+  <text x="112" y="506" fill="white" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" opacity="0.8">Organize teams, scene information, and access in one workspace.</text>
+  <text x="112" y="548" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600">Built for stunt departments. Connected to production.</text>
   <defs>
     <linearGradient id="panel" x1="112" y1="92" x2="1041" y2="566" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0F172A"/>
@@ -165,18 +164,13 @@ const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none"
 </svg>
 `;
 
-const faviconSvg = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
-  <path d="M69 72H187V93.5H144.5V183H111.5V93.5H69V72Z" fill="white"/>
-  <path d="M83 72H112L139 117.5V183H106V126L83 87.5V72Z" fill="white" fill-opacity="0.88"/>
-  <defs>
-    <linearGradient id="bg" x1="22" y1="20" x2="220" y2="232" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3B82F6"/>
-      <stop offset="1" stop-color="#0EA5E9"/>
-    </linearGradient>
-  </defs>
-</svg>
-`;
+const brandmarkPath = path.join(publicDir, "filmik-brandmark-white.svg");
+const faviconSvg = (await fs.readFile(brandmarkPath, "utf8"))
+  .replace(
+    /<svg\b([^>]*)>/,
+    `<svg$1><g transform="translate(362 368) scale(0.8)">`,
+  )
+  .replace(/<\/svg>\s*$/, "</g></svg>");
 
 const seoHead = `
     <!-- SEO:START -->
@@ -196,15 +190,15 @@ const seoHead = `
     <meta property="og:url" content="${siteConfig.siteUrl}" />
     <meta property="og:site_name" content="${escapeHtml(siteConfig.name)}" />
     <meta property="og:locale" content="${siteConfig.locale}" />
-    <meta property="og:image" content="${absoluteUrl("/og-image.svg")}" />
+    <meta property="og:image" content="${absoluteUrl("/og-image-filmik.jpg")}" />
     <meta property="og:image:alt" content="${escapeHtml(siteConfig.title)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(siteConfig.title)}" />
     <meta name="twitter:description" content="${escapeHtml(siteConfig.description)}" />
-    <meta name="twitter:image" content="${absoluteUrl("/og-image.svg")}" />
+    <meta name="twitter:image" content="${absoluteUrl("/og-image-filmik.jpg")}" />
     <meta name="twitter:site" content="${escapeHtml(siteConfig.social.twitter)}" />
     <link rel="canonical" href="${siteConfig.siteUrl}" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg?v=${faviconVersion}" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <script type="application/ld+json">${JSON.stringify(schemaGraph)}</script>
@@ -269,6 +263,9 @@ await Promise.all([
 const currentIndex = await fs.readFile(indexPath, "utf8");
 const updatedIndex = upsertGtmBody(upsertGtmHead(upsertSeoHead(currentIndex)))
   .replace(/<html lang="[^"]*">/, `<html lang="en">`)
-  .replace(/<meta name="viewport" content="[^"]*"\s*\/>/, '<meta name="viewport" content="width=device-width, initial-scale=1.0" />');
+  .replace(/<meta name="viewport" content="[^"]*"\s*\/>/, '<meta name="viewport" content="width=device-width, initial-scale=1.0" />')
+  // Keep repeated SEO syncs from accumulating indentation-only lines.
+  .replace(/^[ \t]+$/gm, "")
+  .trimStart();
 
 await fs.writeFile(indexPath, updatedIndex);

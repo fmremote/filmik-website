@@ -1,7 +1,14 @@
 import { motion } from "motion/react";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { siteContent } from "../../content/siteContent";
 
-export function FinalCTA() {
+type FinalCTAProps = {
+  onOpenRequestAccess: () => void;
+  onOpenWorkflowVideo: () => void;
+};
+
+export function FinalCTA({ onOpenRequestAccess, onOpenWorkflowVideo }: FinalCTAProps) {
+  const { finalCta } = siteContent;
   return (
     <section className="py-20 sm:py-32 relative overflow-hidden" id="trial">
       <div className="absolute inset-0 bg-[#07070d]" />
@@ -21,8 +28,7 @@ export function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
         >
-          <Zap className="w-3 h-3" />
-          Get Started Today
+          {finalCta.eyebrow}
         </motion.div>
 
         <motion.h2
@@ -33,12 +39,12 @@ export function FinalCTA() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ delay: 0.1 }}
         >
-          <span className="text-white">Spend Less Time</span>
+          <span className="text-white">{finalCta.heading[0]}</span>
           <br />
-          <span className="text-white">Managing Production.</span>
+          <span className="text-white">{finalCta.heading[1]}</span>
           <br />
           <span className="bg-gradient-to-r from-primary via-sky-400 to-accent bg-clip-text text-transparent">
-            More Time Making It.
+            {finalCta.heading[2]}
           </span>
         </motion.h2>
 
@@ -49,9 +55,7 @@ export function FinalCTA() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ delay: 0.2 }}
         >
-          Join 2,400+ production professionals already using Filmik to run
-          faster, tighter, more organized productions. Pricing is upfront and
-          your free trial starts in a few taps.
+          {finalCta.description}
         </motion.p>
 
         <motion.div
@@ -61,15 +65,7 @@ export function FinalCTA() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ delay: 0.24 }}
         >
-          <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5">
-            Compare plans by role
-          </span>
-          <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5">
-            Start free without a card
-          </span>
-          <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5">
-            Upgrade when your team is ready
-          </span>
+          {finalCta.benefits.map((benefit) => <span key={benefit} className="rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5">{benefit}</span>)}
         </motion.div>
 
         <motion.div
@@ -79,25 +75,27 @@ export function FinalCTA() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ delay: 0.3 }}
         >
-          <a
-            href="#pricing"
+          <button
+            type="button"
+            onClick={onOpenRequestAccess}
             data-analytics-event="cta_click"
             data-analytics-label="Start Free Trial"
             data-analytics-location="final_cta"
             className="group flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30"
           >
-            Start Free Trial
+            {finalCta.primaryCta}
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href="#workflow"
+          </button>
+          <button
+            type="button"
+            onClick={onOpenWorkflowVideo}
             data-analytics-event="cta_click"
             data-analytics-label="Review Workflow"
             data-analytics-location="final_cta"
             className="rounded-xl border border-white/[0.09] bg-white/[0.04] px-8 py-4 text-base font-semibold text-white/70 transition-all hover:bg-white/[0.08] hover:text-white"
           >
-            Review Workflow
-          </a>
+            {finalCta.secondaryCta}
+          </button>
         </motion.div>
 
         <motion.p
@@ -107,7 +105,7 @@ export function FinalCTA() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ delay: 0.45 }}
         >
-          No credit card required · 7-day free trial · Cancel anytime
+          {finalCta.note}
         </motion.p>
       </div>
     </section>

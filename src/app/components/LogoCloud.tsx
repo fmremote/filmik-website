@@ -1,15 +1,5 @@
 import { motion } from "motion/react";
-
-const logos = [
-  "Warner Bros",
-  "Netflix",
-  "HBO",
-  "Amazon Studios",
-  "Disney+",
-  "Paramount",
-  "Apple TV+",
-  "Sony Pictures",
-];
+import { siteContent } from "../../content/siteContent";
 
 export function LogoCloud() {
   return (
@@ -24,14 +14,14 @@ export function LogoCloud() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Trusted by production professionals worldwide
+          {siteContent.trustedBy.heading}
         </motion.p>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
-          {logos.map((logo, index) => (
+        <div className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-3">
+          {siteContent.trustedBy.companies.map((logo, index) => (
             <motion.div
               key={logo}
-              className="text-sm font-bold text-white/15 hover:text-white/40 transition-colors duration-300 tracking-wider uppercase"
+              className="rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.14em] text-white/45 transition-colors duration-300 hover:text-white/70"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
