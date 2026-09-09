@@ -36,16 +36,16 @@ export function PerformerSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_0%_50%,rgba(139,92,246,0.06),transparent)]" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Profile Mockup — shown first on mobile */}
+        <div className="grid grid-cols-1 gap-12 sm:gap-16">
+          {/* Profile mockup follows the performer story on every viewport. */}
           <motion.div
-            className="order-1 lg:order-1"
+            className="order-2"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="relative max-w-sm mx-auto lg:max-w-none">
+            <div className="relative mx-auto max-w-5xl">
               <div className="absolute -inset-4 bg-violet-500/10 blur-3xl rounded-3xl opacity-60" />
               <a href={performers.profile.url} target="_blank" rel="noreferrer" data-analytics-event="profile_link_open" data-analytics-label="Filmik public profile" data-analytics-location="performer_profile" className="relative block transition-transform hover:scale-[1.01]">
                 <BrowserFrame src="/images/performer-profile.webp" alt="Filmik performer profile" status="Profile ready" />
@@ -133,7 +133,7 @@ export function PerformerSection() {
 
           {/* Content */}
           <motion.div
-            className="order-2 lg:order-2"
+            className="order-1 mx-auto max-w-3xl"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}

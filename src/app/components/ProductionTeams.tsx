@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, CalendarDays, Clapperboard, FolderKanban, LayoutGrid, X } from "lucide-react";
 import { siteContent } from "../../content/siteContent";
@@ -71,6 +71,12 @@ type ModuleDetailModalProps = {
 };
 
 export function ModuleDetailModal({ activeModule, onClose, onSelect }: ModuleDetailModalProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    contentRef.current?.scrollTo({ top: 0 });
+  }, [activeModule]);
+
   if (activeModule === null) return null;
   const activeDetail = moduleDetails[activeModule];
   const previous = (activeModule + moduleDetails.length - 1) % moduleDetails.length;
@@ -79,7 +85,7 @@ export function ModuleDetailModal({ activeModule, onClose, onSelect }: ModuleDet
   return <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-2 backdrop-blur-md sm:p-5" role="dialog" aria-modal="true" aria-labelledby="module-detail-title" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
     <motion.div initial={{ opacity: 0, scale: 0.98, y: 18 }} animate={{ opacity: 1, scale: 1, y: 0 }} className="flex h-[96dvh] w-full max-w-none flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#09111b] shadow-2xl sm:h-[92dvh] sm:w-[96vw] sm:rounded-3xl">
       <header className="flex shrink-0 items-center justify-between border-b border-white/[0.08] px-5 py-4 sm:px-8"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{activeDetail.eyebrow}</p><button type="button" onClick={onClose} className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/70 hover:bg-white/10 hover:text-white" aria-label="Close module details"><X className="h-5 w-5" /></button></header>
-      <div className="relative min-h-0 flex-1 overflow-y-auto bg-[radial-gradient(ellipse_80%_100%_at_100%_0%,rgba(59,130,246,0.2),transparent_55%),radial-gradient(ellipse_70%_90%_at_0%_100%,rgba(14,165,233,0.13),transparent_60%),linear-gradient(135deg,rgba(17,24,39,0.98),rgba(8,15,27,0.96))] px-5 py-9 sm:px-10 sm:py-12 lg:px-16"><div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:56px_56px]" />
+      <div ref={contentRef} className="relative min-h-0 flex-1 overflow-y-auto bg-[radial-gradient(ellipse_80%_100%_at_100%_0%,rgba(59,130,246,0.2),transparent_55%),radial-gradient(ellipse_70%_90%_at_0%_100%,rgba(14,165,233,0.13),transparent_60%),linear-gradient(135deg,rgba(17,24,39,0.98),rgba(8,15,27,0.96))] px-5 py-9 sm:px-10 sm:py-12 lg:px-16"><div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:56px_56px]" />
         <div className="relative mx-auto max-w-[90rem]"><h3 id="module-detail-title" className="max-w-4xl text-3xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl" style={{ fontFamily: "var(--font-display)" }}>{activeDetail.title}</h3><p className="mt-5 max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">{activeDetail.intro}</p><div className="mt-10 grid gap-4 sm:grid-cols-2">{activeDetail.points.map((point, index) => <article key={point.title} className="rounded-2xl border border-white/[0.12] bg-[#07111f]/55 p-5 backdrop-blur-sm"><div className="mb-4 flex h-7 w-7 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">0{index + 1}</div><h4 className="font-semibold text-white">{point.title}</h4><p className="mt-2 text-sm leading-relaxed text-white/60">{point.copy}</p></article>)}</div></div>
       </div>
       <footer className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-t border-white/[0.08] px-5 py-4 sm:px-8"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/35">{activeModule + 1} / {moduleDetails.length}</p><div className="flex items-center gap-2"><button type="button" onClick={() => onSelect(previous)} className="rounded-lg border border-white/10 px-4 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/[0.06] hover:text-white">Previous</button><div className="hidden gap-1 sm:flex">{moduleDetails.map((module, index) => <button key={module.eyebrow} type="button" onClick={() => onSelect(index)} aria-label={`Open ${module.eyebrow}`} className={`h-2 w-2 rounded-full transition ${index === activeModule ? "w-6 bg-primary" : "bg-white/25 hover:bg-white/50"}`} />)}</div><button type="button" onClick={() => onSelect(next)} className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/90">Next</button></div></footer>

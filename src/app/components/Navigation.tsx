@@ -103,16 +103,15 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
             </div>
 
             <div className="flex items-center gap-2 md:hidden">
-              <button
-                type="button"
-                onClick={onOpenRequestAccess}
+              <a
+                href="https://app.filmik.io"
                 data-analytics-event="cta_click"
-                data-analytics-label="Request Access"
+                data-analytics-label="Sign In"
                 data-analytics-location="navigation_mobile"
-                className="rounded-lg bg-primary px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary/90"
+                className="rounded-lg bg-[#172638] px-3.5 py-2 text-xs font-semibold text-white shadow-lg shadow-black/20 transition-all hover:bg-[#21344b]"
               >
-                {navigation.requestAccessCta}
-              </button>
+                {navigation.signInCta}
+              </a>
               <button
                 className="flex h-10 w-10 items-center justify-center rounded-lg text-white/70 transition-colors hover:bg-white/5 hover:text-white"
                 onClick={() => setMobileOpen((v) => !v)}
@@ -146,14 +145,6 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.25 }}
           >
-            <div className="mb-4 rounded-2xl border border-primary/20 bg-primary/10 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
-                {navigation.mobile.title}
-              </p>
-              <p className="mt-2 text-sm text-white/75">
-                {navigation.mobile.description}
-              </p>
-            </div>
             {navigation.links.map((link, i) => {
               const className = `flex h-12 items-center rounded-lg px-3 text-base font-semibold transition-colors hover:bg-white/5 ${
                 link.href === "#solutions"
