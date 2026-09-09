@@ -53,35 +53,43 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-7">
-              {navigation.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm font-semibold transition-colors duration-200 ${
-                    link.href === "#solutions"
-                      ? "text-primary hover:text-primary/75"
-                      : link.href === "#performers"
-                        ? "text-violet-300 hover:text-violet-200"
-                        : "text-white/50 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navigation.links.map((link) => {
+                const className = `text-sm font-semibold transition-colors duration-200 ${
+                  link.href === "#solutions"
+                    ? "text-primary hover:text-primary/75"
+                    : link.href === "#performers"
+                      ? "text-violet-300 hover:text-violet-200"
+                      : "text-white/50 hover:text-white"
+                }`;
+
+                return link.href === "#workflow-video" ? (
+                  <button
+                    key={link.href}
+                    type="button"
+                    onClick={onOpenWorkflowVideo}
+                    data-analytics-event="cta_click"
+                    data-analytics-label="Workflow"
+                    data-analytics-location="navigation_desktop"
+                    className={className}
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <a key={link.href} href={link.href} className={className}>
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-3">
-              <button
-                type="button"
-                onClick={onOpenWorkflowVideo}
-                data-analytics-event="cta_click"
-                data-analytics-label="See Workflow"
-                data-analytics-location="navigation_desktop"
-                className="rounded-lg px-3 py-1.5 text-sm font-semibold text-red-300 transition-colors hover:bg-red-500/10 hover:text-red-200"
+              <a
+                href="https://app.filmik.io"
+                className="rounded-lg bg-[#172638] px-4 py-2 text-sm font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#21344b] hover:shadow-lg hover:shadow-black/20 active:translate-y-0"
               >
-                {navigation.workflowCta}
-              </button>
+                {navigation.signInCta}
+              </a>
               <button
                 type="button"
                 onClick={onOpenRequestAccess}
@@ -146,40 +154,52 @@ export function Navigation({ onOpenWorkflowVideo, onOpenRequestAccess }: Navigat
                 {navigation.mobile.description}
               </p>
             </div>
-            {navigation.links.map((link, i) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                className={`flex h-12 items-center rounded-lg px-3 text-base font-semibold transition-colors hover:bg-white/5 ${
-                  link.href === "#solutions"
-                    ? "text-primary hover:text-primary/75"
-                    : link.href === "#performers"
-                      ? "text-violet-300 hover:text-violet-200"
-                      : "text-white/70 hover:text-white"
-                }`}
-                onClick={() => setMobileOpen(false)}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.04 }}
-              >
-                {link.label}
-              </motion.a>
-            ))}
+            {navigation.links.map((link, i) => {
+              const className = `flex h-12 items-center rounded-lg px-3 text-base font-semibold transition-colors hover:bg-white/5 ${
+                link.href === "#solutions"
+                  ? "text-primary hover:text-primary/75"
+                  : link.href === "#performers"
+                    ? "text-violet-300 hover:text-violet-200"
+                    : "text-white/70 hover:text-white"
+              }`;
+
+              return link.href === "#workflow-video" ? (
+                <motion.button
+                  key={link.href}
+                  type="button"
+                  className={className}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    onOpenWorkflowVideo();
+                  }}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                >
+                  {link.label}
+                </motion.button>
+              ) : (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  className={className}
+                  onClick={() => setMobileOpen(false)}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                >
+                  {link.label}
+                </motion.a>
+              );
+            })}
 
             <div className="pt-4 pb-2 flex flex-col gap-3 border-t border-white/[0.06] mt-4">
-              <button
-                type="button"
-                className="flex h-12 w-full items-center justify-center rounded-lg text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-                data-analytics-event="cta_click"
-                data-analytics-label="Explore Workflow"
-                data-analytics-location="navigation_drawer"
-                onClick={() => {
-                  setMobileOpen(false);
-                  onOpenWorkflowVideo();
-                }}
+              <a
+                href="https://app.filmik.io"
+                className="flex h-12 w-full items-center justify-center rounded-lg bg-[#172638] text-sm font-semibold text-white transition-colors hover:bg-[#21344b]"
               >
-                {navigation.mobile.workflowCta}
-              </button>
+                {navigation.signInCta}
+              </a>
               <button
                 type="button"
                 onClick={() => {

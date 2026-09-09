@@ -179,7 +179,7 @@ export function Footer({ onOpenRequestAccess }: FooterProps) {
           <div className="flex items-center gap-6">
             <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=2a58c3f5-4008-4ef9-b878-9c494ecd5598" target="_blank" rel="noreferrer" className="text-xs text-white/25 hover:text-white/50 transition-colors">Privacy</a>
             <a href="https://app.termly.io/document/terms-of-service/05984678-8f92-45f7-ba8e-ad68bc99f94b" target="_blank" rel="noreferrer" className="text-xs text-white/25 hover:text-white/50 transition-colors">Terms</a>
-            <a href="https://app.termly.io/document/privacy-policy/2a58c3f5-4008-4ef9-b878-9c494ecd5598" target="_blank" rel="noreferrer" className="text-xs text-white/25 hover:text-white/50 transition-colors">Cookies</a>
+            <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=2a58c3f5-4008-4ef9-b878-9c494ecd5598#cookies" target="_blank" rel="noreferrer" className="text-xs text-white/25 hover:text-white/50 transition-colors">Cookies</a>
           </div>
         </div>
       </div>

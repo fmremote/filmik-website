@@ -61,7 +61,7 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-base text-white/65 leading-relaxed mb-8 flex-1">
+              <p className="text-base text-white/65 leading-relaxed mb-8 flex-1 whitespace-pre-line">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
@@ -75,7 +75,7 @@ export function Testimonials() {
                 <div>
                   <div className="text-sm font-semibold text-white">{t.author}</div>
                   <div className="text-xs text-white/40">
-                    {t.role} · {t.company}
+                    {t.company ? `${t.role} · ${t.company}` : t.role}
                   </div>
                 </div>
               </div>

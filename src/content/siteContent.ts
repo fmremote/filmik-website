@@ -7,10 +7,12 @@ export const siteContent = {
     links: [
       { href: "#solutions", label: "For Stunt Departments" },
       { href: "#performers", label: "For Performers" },
+      { href: "#workflow-video", label: "Workflow" },
       { href: "#workflow", label: "How It Works" },
       { href: "#pricing", label: "Plans" },
     ],
-    workflowCta: "Watch the Workflow",
+    workflowCta: "Workflow",
+    signInCta: "Sign In",
     requestAccessCta: "Request Access",
     mobile: {
       title: "Request access",
@@ -99,9 +101,9 @@ export const siteContent = {
   testimonials: {
     eyebrow: "What Filmik members say", heading: ["Built around the people", "doing the work."],
     cards: [
-      ["Filmik has completely transformed how we manage our productions. The submission board alone has saved us countless hours every single casting cycle.", "Sarah Chen", "Production Coordinator", "HBO", "SC"],
-      ["As a performer, having a professional profile I can share instantly has been a game-changer. Coordinators love how clean and complete it is.", "Marcus Johnson", "Actor & Stunt Performer", "SAG-AFTRA", "MJ"],
-      ["The action breakdown is incredible. What used to take days now takes minutes, and it gives us a much stronger starting point than beginning from scratch.", "Emily Rodriguez", "Script Supervisor", "Warner Bros", "ER"],
+      ["Whether you’re Stunt Coordinating a Commercial, Music Video, TV Show or a Feature film, Filmik is a game changer.\n\nThis platform is helping our profession to streamline our work flow with every department in production. With all of the added tasks we are asked of in the industry, Filmik has made my job easier with an assistant and without one.\n\nTime is precious while in production so do yourself a favor and have Filmik in your life.", "TJ White", "Stunt Coordinator / 2nd Unit Director", "T Minus Productions", "TW"],
+      ["Innovative, efficient, and user friendly. Filmik seamlessly connects departments by replacing the laborious workflows we’ve grown accustomed to using with a central database that can be accessed company wide.\n\nFrom an assistant director’s perspective, interdepartmental communication is now simplified. The “middleman problem” is alleviated as departments can directly interact utilizing Filmik’s resources updated in real-time. As a result, creative visions are more easily implemented with less obstruction or errors.\n\nI look forward to the day when Filmik becomes an industry wide standard!", "Chris Haley", "Assistant Director", "", "CH"],
+      ["Filmik is the future of efficiency, accessibility and organization in the film industry.\n\nAs a stunt coordinator it allows for me to share information easily with the touch of a button and that’s just the beginning!\n\nThis app is the game changer we need in this industry.", "Greg Rementer", "Second Unit Director / Stunt Coordinator", "", "GR"],
     ],
   },
   community: {

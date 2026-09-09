@@ -13,7 +13,7 @@ const itemStyles = [
     icon: CalendarIcon,
     color: "text-violet-400",
     bg: "from-violet-500/15 to-violet-500/5",
-    border: "hover:border-violet-500/25", href: "https://www.linkedin.com/company/filmikio",
+    border: "hover:border-violet-500/25", href: "https://www.instagram.com/filmiknation/",
   },
   {
     icon: Megaphone,
