@@ -83,7 +83,7 @@ export function Footer({ onOpenRequestAccess }: FooterProps) {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    {link.label === "Request Access" ? <button type="button" onClick={onOpenRequestAccess} data-analytics-event="cta_click" data-analytics-label="Request Access" data-analytics-location="footer" className="text-sm text-white/45 transition-colors duration-200 hover:text-white/80">{link.label}</button> : <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined} className="text-sm text-white/45 transition-colors duration-200 hover:text-white/80">{link.label}</a>}
+                    {link.label === "Request Access" ? <button type="button" onClick={onOpenRequestAccess} data-analytics-event="cta_click" data-analytics-label="Request Access" data-analytics-location="footer" className="text-sm text-white/45 transition-colors duration-200 hover:text-white/80">{link.label}</button> : <a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined} className={`text-sm transition-colors duration-200 ${link.label === "Filmik for iOS" || link.label === "Filmik for Android" ? "font-semibold text-red-300 hover:text-red-200" : "text-white/45 hover:text-white/80"}`}>{link.label}</a>}
                   </li>
                 ))}
               </ul>

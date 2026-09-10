@@ -120,7 +120,7 @@ export const siteContent = {
     description: "Filmik helps stunt departments organize their work, manage access, and coordinate with the production teams around them.",
     newsletter: { heading: "Stay updated", description: "New features, industry news, and updates - no spam.", placeholder: "Enter your email", cta: "Subscribe" },
     linkGroups: [
-      { title: "Product", links: [["For Stunt Departments", "#solutions"], ["The Filmik Directory", "#directory"], ["How It Works", "#workflow"], ["Plans", "#pricing"]] },
+      { title: "Product", links: [["For Stunt Departments", "#solutions"], ["The Filmik Directory", "#directory"], ["How It Works", "#workflow"], ["Plans", "#pricing"], ["Filmik for iOS", "https://apps.apple.com/us/app/filmik/id1572006464"], ["Filmik for Android", "https://play.google.com/store/apps/details?id=com.filmik.filmik_android.prod&hl=en_US&pli=1"]] },
       { title: "Resources", links: [["Platform Features", "#features"], ["Community", "#news"], ["Contact", "mailto:hello@filmik.com"]] },
       { title: "Company", links: [["About Filmik", "https://www.linkedin.com/company/filmikio"], ["Request Access", "#request-access"], ["Privacy", "https://app.termly.io/policy-viewer/policy.html?policyUUID=2a58c3f5-4008-4ef9-b878-9c494ecd5598"]] },
     ],
