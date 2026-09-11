@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Filmik | Stunt Department Workflow for Film & TV Production",
   description:
     "Filmik helps stunt departments organize their teams, scene information, documents, and permissions while coordinating with film and television production.",
-  siteUrl: "https://filmik-website.vercel.app",
+  siteUrl: "https://filmik.io",
   locale: "en_US",
   themeColor: "#07070d",
   category: "Business",

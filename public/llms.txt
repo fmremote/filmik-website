@@ -5,7 +5,7 @@
 Filmik helps stunt departments organize teams, scene information, documents, and permissions while coordinating with production. It also gives performers a professional profile and helps department heads find project-ready talent.
 
 ## Canonical site
-- https://filmik-website.vercel.app
+- https://filmik.io
 
 ## Primary audience
 - Stunt departments managing teams, scene information, and department workflows
@@ -13,7 +13,7 @@ Filmik helps stunt departments organize teams, scene information, documents, and
 - Performers sharing profiles, media, and project-ready information
 
 ## Key pages
-- https://filmik-website.vercel.app/
+- https://filmik.io/
 
 ## Contact
 - hello@filmik.com
