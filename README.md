@@ -154,6 +154,10 @@ The report is never exposed through the public website. It includes the submitte
 
 For a browser download, use `https://filmik-website-preview.vercel.app/api/reports/leads?format=csv`. The endpoint uses HTTP Basic Auth, returns `Cache-Control: no-store`, and never includes credentials in the URL. Use the configured report username and password. Add `kind=request-access` or `kind=newsletter`, and an optional ISO timestamp such as `since=2026-09-01T00:00:00Z`, to filter the report.
 
+### Supabase Activity Check
+
+Vercel invokes `/api/cron/supabase-activity` daily at 09:17 UTC. The function makes a minimal authenticated Supabase read, which also confirms that lead storage remains available. Set `CRON_SECRET` in Vercel's Production environment; Vercel supplies it as a Bearer token for cron invocations. Upgrade Supabase to Pro for its guaranteed protection against inactivity pausing.
+
 - Vercel config: [`vercel.json`](/Users/victorfrias/dev/filmik-website/vercel.json)
 - Local Vercel linkage: `.vercel/project.json` (intentionally gitignored)
 - Stable production alias should resolve to:
