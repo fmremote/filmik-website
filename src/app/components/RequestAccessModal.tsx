@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Input } from "./ui/input";
 import { trackEvent } from "../../lib/analytics";
@@ -24,6 +24,7 @@ export function RequestAccessModal({
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "submitted" | "error">("idle");
   const [error, setError] = useState("");
+  const submissionInFlight = useRef(false);
 
   useEffect(() => {
     if (!open) {
@@ -77,6 +78,9 @@ export function RequestAccessModal({
               className="space-y-5"
               onSubmit={async (event) => {
                 event.preventDefault();
+                if (submissionInFlight.current) return;
+
+                submissionInFlight.current = true;
                 setStatus("submitting");
                 setError("");
                 trackEvent("request_access_intent", {
@@ -112,6 +116,8 @@ export function RequestAccessModal({
                 } catch (submissionError) {
                   setError(submissionError instanceof Error ? submissionError.message : "Unable to submit your request.");
                   setStatus("error");
+                } finally {
+                  submissionInFlight.current = false;
                 }
               }}
             >

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CheckCircle2, Instagram, Youtube, Linkedin } from "lucide-react";
 import { trackEvent } from "../../lib/analytics";
 import { siteContent } from "../../content/siteContent";
@@ -30,6 +30,7 @@ export function Footer({ onOpenRequestAccess }: FooterProps) {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "submitting" | "submitted" | "error">("idle");
   const [newsletterError, setNewsletterError] = useState("");
+  const newsletterSubmissionInFlight = useRef(false);
   const footerSections = footer.linkGroups.map((section) => ({
     ...section,
     links: section.links.map(([label, href]) => ({ label, href })),
@@ -118,6 +119,9 @@ export function Footer({ onOpenRequestAccess }: FooterProps) {
               className="flex flex-wrap gap-2 sm:flex-shrink-0"
               onSubmit={async (event) => {
                 event.preventDefault();
+                if (newsletterSubmissionInFlight.current) return;
+
+                newsletterSubmissionInFlight.current = true;
                 setNewsletterStatus("submitting");
                 setNewsletterError("");
                 trackEvent("newsletter_subscription_intent", { location: "footer" });
@@ -144,6 +148,8 @@ export function Footer({ onOpenRequestAccess }: FooterProps) {
                 } catch (submissionError) {
                   setNewsletterError(submissionError instanceof Error ? submissionError.message : "Unable to subscribe right now.");
                   setNewsletterStatus("error");
+                } finally {
+                  newsletterSubmissionInFlight.current = false;
                 }
               }}
             >

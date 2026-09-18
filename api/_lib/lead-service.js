@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 5;
+const DUPLICATE_SUBMISSION_WINDOW_MS = 10 * 60 * 1000;
 const requests = new Map();
 
 function normalizeEmail(value) {
@@ -153,6 +154,41 @@ async function saveToSupabase(record) {
   }
 }
 
+async function hasRecentLeadSubmission({ kind, email }) {
+  const url = process.env.SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!url || !serviceRoleKey) return false;
+
+  const params = new URLSearchParams({
+    select: "id",
+    kind: `eq.${kind}`,
+    email: `eq.${email}`,
+    created_at: `gte.${new Date(Date.now() - DUPLICATE_SUBMISSION_WINDOW_MS).toISOString()}`,
+    limit: "1",
+  });
+
+  try {
+    const response = await fetch(`${url}/rest/v1/website_leads?${params}`, {
+      headers: {
+        apikey: serviceRoleKey,
+        Authorization: `Bearer ${serviceRoleKey}`,
+      },
+    });
+
+    if (!response.ok) {
+      console.error("Supabase duplicate check failed", { status: response.status });
+      return false;
+    }
+
+    const records = await response.json();
+    return Array.isArray(records) && records.length > 0;
+  } catch (error) {
+    console.error("Supabase duplicate check failed", { message: error instanceof Error ? error.message : "Unknown error" });
+    return false;
+  }
+}
+
 async function notifyTwilioWebhook(payload) {
   const webhookUrl = process.env.TWILIO_ACCESS_REQUEST_WEBHOOK_URL;
   if (!webhookUrl) return;
@@ -197,6 +233,11 @@ export async function handleLeadRequest(request, response, kind) {
   };
 
   try {
+    // Repeated clicks or a browser retry should not create more leads or send more acknowledgements.
+    if (await hasRecentLeadSubmission({ kind, email })) {
+      return json(response, 200, { ok: true, duplicate: true });
+    }
+
     if (kind === "request-access") {
       const name = String(body.name || "").trim().slice(0, 120);
       const department = String(body.department || "").trim().slice(0, 120);
