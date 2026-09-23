@@ -239,12 +239,14 @@ export async function handleLeadRequest(request, response, kind) {
     }
 
     if (kind === "request-access") {
-      const name = String(body.name || "").trim().slice(0, 120);
+      const firstName = String(body.firstName || "").trim().slice(0, 60);
+      const lastName = String(body.lastName || "").trim().slice(0, 60);
+      const name = `${firstName} ${lastName}`.trim();
       const department = String(body.department || "").trim().slice(0, 120);
       const marketingOptIn = Boolean(body.marketingOptIn);
 
-      if (!name || !department) {
-        return json(response, 400, { error: "Complete your name and department." });
+      if (!firstName || !lastName || !department) {
+        return json(response, 400, { error: "Complete your first name, last name, and department." });
       }
 
       await saveToSupabase({ kind, email, name, department, marketing_opt_in: marketingOptIn, source });

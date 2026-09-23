@@ -17,7 +17,8 @@ export function RequestAccessModal({
 }: RequestAccessModalProps) {
   const { requestAccess } = siteContent;
   const [formValues, setFormValues] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     department: "",
     marketingOptIn: false,
@@ -30,7 +31,8 @@ export function RequestAccessModal({
     if (!open) {
       setStatus("idle");
       setFormValues({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         department: "",
         marketingOptIn: false,
@@ -122,21 +124,41 @@ export function RequestAccessModal({
               }}
             >
               <input name="company" tabIndex={-1} autoComplete="off" className="sr-only" aria-hidden="true" />
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80" htmlFor="request-access-name">
-                  {requestAccess.fields.name}
-                </label>
-                <Input
-                  id="request-access-name"
-                  name="name"
-                  value={formValues.name}
-                  onChange={(event) =>
-                    setFormValues((current) => ({ ...current, name: event.target.value }))
-                  }
-                  placeholder={requestAccess.fields.namePlaceholder}
-                  required
-                  className="h-12 border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
-                />
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-white/80" htmlFor="request-access-first-name">
+                    {requestAccess.fields.firstName}
+                  </label>
+                  <Input
+                    id="request-access-first-name"
+                    name="firstName"
+                    autoComplete="given-name"
+                    value={formValues.firstName}
+                    onChange={(event) =>
+                      setFormValues((current) => ({ ...current, firstName: event.target.value }))
+                    }
+                    placeholder={requestAccess.fields.firstNamePlaceholder}
+                    required
+                    className="h-12 border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-white/80" htmlFor="request-access-last-name">
+                    {requestAccess.fields.lastName}
+                  </label>
+                  <Input
+                    id="request-access-last-name"
+                    name="lastName"
+                    autoComplete="family-name"
+                    value={formValues.lastName}
+                    onChange={(event) =>
+                      setFormValues((current) => ({ ...current, lastName: event.target.value }))
+                    }
+                    placeholder={requestAccess.fields.lastNamePlaceholder}
+                    required
+                    className="h-12 border-white/10 bg-white/[0.04] text-white placeholder:text-white/25"
+                  />
+                </div>
               </div>
 
               <div className="space-y-2">
