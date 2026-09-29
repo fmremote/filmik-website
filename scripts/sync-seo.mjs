@@ -113,6 +113,7 @@ const manifest = {
 
 const robots = `User-agent: *
 Allow: /
+Disallow: /how-to/share-your-profile-publicly
 
 Sitemap: ${absoluteUrl("/sitemap.xml")}
 `;

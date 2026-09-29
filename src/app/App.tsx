@@ -14,6 +14,7 @@ import { Community } from "./components/Community";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
 import { RequestAccessModal } from "./components/RequestAccessModal";
+import { ShareYourProfilePublicly, howToPath } from "./pages/how-to/ShareYourProfilePublicly";
 import { trackEvent, trackPageView } from "../lib/analytics";
 
 export default function App() {
@@ -61,6 +62,10 @@ export default function App() {
     trackEvent("request_access_close", { location: "request_access_modal" });
     setIsRequestAccessOpen(false);
   };
+
+  if (window.location.pathname === howToPath) {
+    return <ShareYourProfilePublicly />;
+  }
 
   return (
     <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">

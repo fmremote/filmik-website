@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /how-to/share-your-profile-publicly
 
 Sitemap: https://filmik.io/sitemap.xml
