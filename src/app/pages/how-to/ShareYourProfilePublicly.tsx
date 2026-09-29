@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 const howToPath = "/how-to/share-your-profile-publicly";
 const landscapeVideo = "/media/how-to/share-your-profile-publicly/landscape.mp4";
 const portraitVideo = "/media/how-to/share-your-profile-publicly/portrait.mp4";
+const landscapePoster = "/media/how-to/share-your-profile-publicly/landscape-poster.jpg";
+const portraitPoster = "/media/how-to/share-your-profile-publicly/portrait-poster.jpg";
 
 function usePortraitVideo() {
   const [isPortrait, setIsPortrait] = useState(() => window.matchMedia("(max-width: 767px)").matches);
@@ -22,6 +24,7 @@ function usePortraitVideo() {
 export function ShareYourProfilePublicly() {
   const isPortrait = usePortraitVideo();
   const videoSource = isPortrait ? portraitVideo : landscapeVideo;
+  const videoPoster = isPortrait ? portraitPoster : landscapePoster;
 
   useEffect(() => {
     const previousTitle = document.title;
@@ -70,6 +73,7 @@ export function ShareYourProfilePublicly() {
               controls
               playsInline
               preload="metadata"
+              poster={videoPoster}
               className="block h-auto w-full"
             >
               <source src={videoSource} type="video/mp4" />
