@@ -11,10 +11,10 @@ type ModuleDetail = {
 };
 
 const moduleStyles = [
-  { icon: FolderKanban, color: "text-blue-300", bg: "from-blue-500/20 to-blue-500/5", border: "hover:border-blue-400/40" },
-  { icon: Clapperboard, color: "text-violet-300", bg: "from-violet-500/20 to-violet-500/5", border: "hover:border-violet-400/40" },
-  { icon: LayoutGrid, color: "text-emerald-300", bg: "from-emerald-500/20 to-emerald-500/5", border: "hover:border-emerald-400/40" },
-  { icon: CalendarDays, color: "text-amber-300", bg: "from-amber-500/20 to-amber-500/5", border: "hover:border-amber-400/40" },
+  { icon: FolderKanban, color: "text-blue-300", marker: "bg-blue-300", bg: "from-blue-500/20 to-blue-500/5", border: "hover:border-blue-400/40" },
+  { icon: Clapperboard, color: "text-violet-300", marker: "bg-violet-300", bg: "from-violet-500/20 to-violet-500/5", border: "hover:border-violet-400/40" },
+  { icon: LayoutGrid, color: "text-emerald-300", marker: "bg-emerald-300", bg: "from-emerald-500/20 to-emerald-500/5", border: "hover:border-emerald-400/40" },
+  { icon: CalendarDays, color: "text-amber-300", marker: "bg-amber-300", bg: "from-amber-500/20 to-amber-500/5", border: "hover:border-amber-400/40" },
 ] as const;
 
 export const moduleDetails: ModuleDetail[] = [
@@ -111,7 +111,7 @@ export function ProductionTeams() {
             const Icon = style.icon;
             return <motion.button key={module.title} type="button" onClick={() => setActiveModule(index)} data-analytics-event="module_detail_open" data-analytics-label={module.title} data-analytics-location="stunt_departments" className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] ${style.border} bg-white/[0.02] p-7 text-left transition-all duration-300`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -4 }} viewport={{ once: true }}>
               <div className={`absolute inset-0 bg-gradient-to-b ${style.bg} opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
-              <div className="relative"><div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${style.bg}`}><Icon className={`h-6 w-6 ${style.color}`} /></div><h3 className="mb-2 text-xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>{module.title}</h3><p className="mb-6 text-sm leading-relaxed text-white/45">{module.tagline}</p><ul className="mb-6 space-y-2">{module.features.map((feature) => <li key={feature} className="flex items-center gap-2 text-sm text-white/55"><span className={`h-1 w-1 rounded-full ${style.color.replace("text-", "bg-")}`} />{feature}</li>)}</ul><span className={`flex items-center gap-1.5 text-xs font-semibold ${style.color}`}>Explore module <ArrowRight className="h-3.5 w-3.5" /></span></div>
+              <div className="relative"><div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${style.bg}`}><Icon className={`h-6 w-6 ${style.color}`} /></div><h3 className="mb-2 text-xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>{module.title}</h3><p className="mb-6 text-sm leading-relaxed text-white/45">{module.tagline}</p><ul className="mb-6 space-y-2">{module.features.map((feature) => <li key={feature} className="flex items-center gap-2 text-sm text-white/55"><span className={`h-1 w-1 shrink-0 rounded-full ${style.marker}`} />{feature}</li>)}</ul><span className={`flex items-center gap-1.5 text-xs font-semibold ${style.color}`}>Explore module <ArrowRight className="h-3.5 w-3.5" /></span></div>
             </motion.button>;
           })}
         </div>
